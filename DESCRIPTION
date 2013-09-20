@@ -7,3 +7,5 @@ Authors@R: person("Michael D.","Sumner", role = c("aut", "cre"), email =
     "Michael.Sumner@aad.gov.au")
 Description: Colour palettes for data
 License: GPL-3
+Collate:
+    'datapal.R'
