@@ -227,7 +227,7 @@ sstPal <- function(x, palette = FALSE, alpha = 1) {
 ##' @param x a vector of data values or a single number
 ##' @param palette logical, if \code{TRUE} return a list with matching colours and values
 ##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt}.
+##' @references Derived from http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt.
 ##' @return colours, palette, or function, see Details
 ##' @export
 ##' @examples
