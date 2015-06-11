@@ -316,7 +316,16 @@ chl.pal <- function(x, palette = FALSE, alpha = 1) {
 }
 
 
-
+##' Sample NOAA 1/4 degree daily Optimum Interpolation Sea Surface Temperature 
+##'
+##' This is a gridded raster data set of SST. 
+##' @name oisst
+##' @docType data
+##' @format \code{oisst} A RasterLayer object
+##' @references
+##' \url{http://www.ncdc.noaa.gov/oisst}
+##' @keywords data
+NULL
 
 # ##' Colours for data
 # ##'

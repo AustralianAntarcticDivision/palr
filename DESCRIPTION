@@ -7,4 +7,6 @@ Authors@R: person("Michael D.","Sumner", role = c("aut", "cre"), email =
     "mdsumner@gmail.com")
 Description: Colour palettes for data, based on some well known public data sets. 
 License: GPL-3
-
+VignetteBuilder: knitr
+Suggests: knitr, 
+          raster
