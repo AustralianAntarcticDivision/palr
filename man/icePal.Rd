@@ -26,6 +26,6 @@ The palette functions operate in 3 modes:
 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
 }
 \references{
-Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/README_GEOTIFF.txt}.
+Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
 }
 

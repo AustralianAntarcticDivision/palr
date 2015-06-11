@@ -20,6 +20,6 @@ colours, palette, or function, see Details
 SST colours
 }
 \references{
-Derived from \url{"http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
+Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
 }
 

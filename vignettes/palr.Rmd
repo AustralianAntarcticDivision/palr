@@ -12,7 +12,7 @@ vignette: >
 ##knitr::opts_chunk$set(collapse = TRUE, comment = "")
 library(palr)
 library(raster)
-
+load(system.file("extdata", "oisst.rda", package = "palr"))
 ```
 
 # palr
@@ -35,12 +35,11 @@ The `oisst` data set is a subset the NOAA 1/4° daily Optimum Interpolation Sea 
 ```{r}
 library(raster)
 library(palr)
-data(oisst)
+load(system.file("extdata", "oisst.rda", package = "palr"))
 plot(oisst)
 ```
 
-The default plot colours uses a setting provided by the raster package, but we have SST data in degrees Celsius so we can use the
-`sstPal` function to give specific colours for particular temperatures. The full range of the temperatures is shown on the plot legend, even though our data only has values in the range `r format(cellStats(oisst, range), digits = 2)`. 
+The default plot colours uses a setting provided by the raster package, but we have SST data in degrees Celsius so we can use the `sstPal` function to give specific colours for particular temperatures. The full range of the temperatures is shown on the plot legend, even though our data only has values in the range `r format(cellStats(oisst, range), digits = 2)`. 
 
 ```{r}
 sstcols <- sstPal(palette = TRUE)
@@ -69,7 +68,7 @@ Reynolds, R. W., T. M. Smith, C. Liu, D. B. Chelton, K. S. Casey, and M. G. Schl
 
 ## Appendix: notes on data sets
 
-Full ncdump metadata from the data sets can be obtained with 
+Full ncdump metadata from the data sets can be obtained with the following. 
 
 ```{r}
 metadata(oisst)$filename
