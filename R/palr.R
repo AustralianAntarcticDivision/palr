@@ -1,7 +1,7 @@
-#' datapal: colours for data
+#' palr: colours for data
 #'
 #' @docType package
-#' @name datapal
+#' @name palr
 NULL
 
 
@@ -303,7 +303,7 @@ chl.pal <- function(x, palette = FALSE, alpha = 1) {
 # ##'
 # ##' Maintainer: Michael D. Sumner \email{michael.sumner@@aad.gov.au}
 # ##'
-# ##' @name datapal
+# ##' @name palr
 # ##' @docType package
 # ##' @keywords package
 # NULL
