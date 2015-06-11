@@ -22,14 +22,63 @@ NULL
 # 96% to 98%	148	0	211
 # 99% to 100%	120	0	90
 ## Land (251)	100	100	100
-.seaice.de <- function() {
-   r <- c(0,30,30,34,250,250,250,186,148,120, 100)
-   g <- c(139,255,160,34,0,0,0,211,211,90, 100)
-   b <- c(0,144,250,139,250,125,0,85,0,0, 100)
-   list(col = rgb(r, g, b, maxColorValue = 255),
-        breaks = c(seq(0, 100, length = length(r)), 251))
+# .seaice.de <- function() {
+#    r <- c(0,30,30,34,250,250,250,186,148,120, 100)
+#    g <- c(139,255,160,34,0,0,0,211,211,90, 100)
+#    b <- c(0,144,250,139,250,125,0,85,0,0, 100)
+#    list(col = rgb(r, g, b, maxColorValue = 255),
+#         breaks = c(seq(0, 100, length = length(r)), 251))
+# }
+.amsrecols <- function() {
+# f <- "http://www.iup.uni-bremen.de/seaice/amsr/antarctic_AMSRE.tif"
+# download.file(f, basename(f), mode = "wb")
+# tx <- system(sprintf("gdalinfo %s", basename(f)), intern = TRUE)
+# ct <- read.table(text = sapply(strsplit(tail(tx, length(tx) - grep("Color Table", tx)), "\\s+"), tail, 1), sep = ",")
+# dput(rgb(ct[,1], ct[,2], ct[,3], maxColorValue = 255))
+  c("#00008B", "#00008B", "#00008B", "#00008B", "#00008B", "#00008B", 
+    "#00008B", "#00008B", "#00008B", "#00008B", "#00008B", "#00008B", 
+    "#00008B", "#00008B", "#00008B", "#00008B", "#00008B", "#00008B", 
+    "#00008B", "#00008B", "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", 
+    "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", 
+    "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", 
+    "#1E90FF", "#1E90FF", "#1E90FF", "#1E90FF", "#1EFAA0", "#1EFAA0", 
+    "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", 
+    "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", 
+    "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", "#1EFAA0", 
+    "#228B22", "#228B22", "#228B22", "#228B22", "#228B22", "#228B22", 
+    "#228B22", "#228B22", "#228B22", "#228B22", "#228B22", "#228B22", 
+    "#228B22", "#228B22", "#228B22", "#228B22", "#228B22", "#228B22", 
+    "#228B22", "#228B22", "#00FA00", "#00FA00", "#00FA00", "#00FA00", 
+    "#00FA00", "#00FA00", "#00FA00", "#00FA00", "#00FA00", "#00FA00", 
+    "#00FA00", "#00FA00", "#00FA00", "#00FA00", "#00FA00", "#00FA00", 
+    "#00FA00", "#00FA00", "#00FA00", "#00FA00", "#7DFA00", "#7DFA00", 
+    "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", 
+    "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", 
+    "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", "#7DFA00", 
+    "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", 
+    "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", 
+    "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", "#ADFF2F", 
+    "#ADFF2F", "#ADFF2F", "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", 
+    "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", 
+    "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", 
+    "#FAFA00", "#FAFA00", "#FAFA00", "#FAFA00", "#FA7D00", "#FA7D00", 
+    "#FA7D00", "#FA7D00", "#FA7D00", "#FA7D00", "#FA7D00", "#FA7D00", 
+    "#FA7D00", "#FA7D00", "#FA0000", "#FA0000", "#FA0000", "#FA0000", 
+    "#FA0000", "#FA0000", "#FA0000", "#FA0000", "#FA0000", "#FA0000", 
+    "#BA55D3", "#BA55D3", "#BA55D3", "#BA55D3", "#BA55D3", "#BA55D3", 
+    "#BA55D3", "#BA55D3", "#BA55D3", "#BA55D3", "#9400D3", "#9400D3", 
+    "#9400D3", "#9400D3", "#9400D3", "#9400D3", "#9400D3", "#9400D3", 
+    "#9400D3", "#78005A", "#78005A", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", 
+    "#000000", "#000000", "#000000", "#000000", "#000000", "#646464", 
+    "#000000", "#000000", "#000000", "#000000")
 }
-
 ##' Sea ice colours
 ##' 
 ##' Colours for sea ice. 
@@ -45,8 +94,9 @@ NULL
 ##' @return colours, palette, or function, see Details
 ##' @export
 ice.pal <- function(x, palette = FALSE, alpha = 1) {
-  breaks <- .seaice.de()$breaks
-  cols <- .seaice.de()$col  
+  
+  cols <- .amsrecols()  
+  breaks <- seq_along(cols)
   hexalpha <- as.hexmode(round(255 * alpha))
   if (nchar(hexalpha) == 1L) hexalpha <- paste(rep(hexalpha, 2L), collapse = "")
   cols <- paste0(cols, hexalpha)
