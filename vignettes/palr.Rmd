@@ -58,7 +58,7 @@ layout(matrix(1:2, ncol = 2))
 plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 plot(oisst, col = "transparent", legend = FALSE)## plot twice to get exact alignment
 plot(psst, col = sstPal(psst$layer), add = TRUE)
-temps <- rev(c(0, 5, 10, 15, 20))
+temps <- rev(c(0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20))
 op <- par(xpd = NA); legend("right", legend = temps, fill = sstPal(temps), inset = -0.2, cex = 0.65)
 par(op)
 ```
