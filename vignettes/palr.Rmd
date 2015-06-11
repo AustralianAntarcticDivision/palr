@@ -1,12 +1,5 @@
 ---
 title: "Colour palettes for data in palr"
-author: "Michael Sumner"
-date: "11/06/2015"
-output: html_document
----
-
----
-title: "Colour palettes for data in palr"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
