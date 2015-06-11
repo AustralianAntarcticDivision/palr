@@ -112,7 +112,7 @@ col2hex <- function(x, alpha = 1) {
 ##' @param x a vector of data values or a single num (n)
 ##' @param palette logical, if \code{TRUE} return a list with matching colours and values
 ##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/README_GEOTIFF.txt}.
+##' @references Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
 ##' @return colours, palette, or function, see Details
 ##' @export
 icePal <- function(x, palette = FALSE, alpha = 1) {
@@ -143,7 +143,7 @@ icePal <- function(x, palette = FALSE, alpha = 1) {
 ##' @param x a vector of data values or a single number
 ##' @param palette logical, if \code{TRUE} return a list with matching colours and values
 ##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from \url{"http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
+##' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
 ##' @return colours, palette, or function, see Details
 ##' @export
 sstPal <- function(x, palette = FALSE, alpha = 1) {
@@ -227,7 +227,7 @@ sstPal <- function(x, palette = FALSE, alpha = 1) {
 ##' @param x a vector of data values or a single number
 ##' @param palette logical, if \code{TRUE} return a list with matching colours and values
 ##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt.
+##' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt}.
 ##' @return colours, palette, or function, see Details
 ##' @export
 ##' @examples
