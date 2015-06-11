@@ -1,6 +1,6 @@
 Package: datapal
 Type: Package
-Title: Colour palettes for data
+Title: Colour Palettes for Data
 LazyData: yes
 Version: 0.0-2
 Authors@R: person("Michael D.","Sumner", role = c("aut", "cre"), email =
