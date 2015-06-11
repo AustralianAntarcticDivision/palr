@@ -2,10 +2,10 @@ Package: datapal
 Type: Package
 Title: Colour palettes for data
 LazyData: yes
-Version: 0.0-1
+Version: 0.0-2
 Authors@R: person("Michael D.","Sumner", role = c("aut", "cre"), email =
-    "Michael.Sumner@aad.gov.au")
-Description: Colour palettes for data
+    "mdsumner@gmail.com")
+Description: Colour palettes for data, based on some well known public data sets. 
 License: GPL-3
 Collate:
     'datapal.R'
