@@ -1,6 +1,8 @@
-dev
+     VERSION 0.0.4
 
 o renamed functions to camel case
+
+o improved vignette
 
     VERSION 0.0.2
 
