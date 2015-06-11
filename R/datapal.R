@@ -96,7 +96,7 @@ NULL
 ice.pal <- function(x, palette = FALSE, alpha = 1) {
   
   cols <- .amsrecols()  
-  breaks <- seq_along(cols)
+ breaks <- seq_along(cols)
   hexalpha <- as.hexmode(round(255 * alpha))
   if (nchar(hexalpha) == 1L) hexalpha <- paste(rep(hexalpha, 2L), collapse = "")
   cols <- paste0(cols, hexalpha)
