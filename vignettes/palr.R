@@ -11,7 +11,7 @@ data(oisst)
 plot(oisst)
 
 ## ------------------------------------------------------------------------
-sstcols <- sst.pal(palette = TRUE)
+sstcols <- sstPal(palette = TRUE)
 plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 
 ## ------------------------------------------------------------------------

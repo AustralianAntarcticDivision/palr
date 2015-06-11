@@ -106,16 +106,16 @@ col2hex <- function(x, alpha = 1) {
 ##' Colours for sea ice. 
 ##' 
 ##' The palette functions operate in 3 modes: 
-##' 1) n colours - ice.pal(6) - returns 6 colours from the palette
-##' 2) data      - ice.pal(c(10, 50, 100)) - return colours for 3 ice concentrations
-##' 3) palette   - ice.pal(palette = TRUE) - return the full palette and breaks
+##' 1) n colours - Pal(6) - returns 6 colours from the palette
+##' 2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
+##' 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
 ##' @param x a vector of data values or a single num (n)
 ##' @param palette logical, if \code{TRUE} return a list with matching colours and values
 ##' @param alpha value in 0,1 to specify opacity
 ##' @references Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/README_GEOTIFF.txt}.
 ##' @return colours, palette, or function, see Details
 ##' @export
-ice.pal <- function(x, palette = FALSE, alpha = 1) {
+icePal <- function(x, palette = FALSE, alpha = 1) {
   
   cols <- head(.amsrecols(), 201)
  breaks <- seq(0, 100, length = length(cols))
@@ -146,7 +146,7 @@ ice.pal <- function(x, palette = FALSE, alpha = 1) {
 ##' @references Derived from \url{"http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
 ##' @return colours, palette, or function, see Details
 ##' @export
-sst.pal <- function(x, palette = FALSE, alpha = 1) {
+sstPal <- function(x, palette = FALSE, alpha = 1) {
   ##pal <- read.table("http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt", header = TRUE, colClasses = "integer", comment.char = "")
   ##cols <- rgb(pal[,2], pal[,3], pal[,4], maxColorValue = 255)
   ##dput(cols)
@@ -232,22 +232,22 @@ sst.pal <- function(x, palette = FALSE, alpha = 1) {
 ##' @export
 ##' @examples
 ##' \dontrun{
-##' chl <- readchla(xylim = c(100, 110, -50, -40))
+##' chl <- raadtools::readchla(xylim = c(100, 110, -50, -40))
 ##' ## just get a small number of evenly space colours
-##' plot(chl, col = chl.pal(10))
+##' plot(chl, col = chlPal(10))
 ##' ## store the full palette and work with values and colours
-##' pal <- chl.pal()
+##' pal <- chlPal()
 ##' ## the standard full palette
 ##' plot(chl, breaks = pal$breaks, col = pal$cols)
 ##' ## a custom set of values with matching colours
-##' plot(chl, col = chl.pal(pal$breaks[seq(1, length(pal$breaks), length = 10)]))
+##' plot(chl, col = chlPal(pal$breaks[seq(1, length(pal$breaks), length = 10)]))
 ##' ## any number of colours stored as a function
-##' myfun <- chl.pal()
+##' myfun <- chlPal()
 ##' plot(chl, col = myfun(18))
 ##' ## just n colours
-##' plot(chl, col = chl.pal(18))
+##' plot(chl, col = chlPal(18))
 ##' }
-chl.pal <- function(x, palette = FALSE, alpha = 1) {
+chlPal <- function(x, palette = FALSE, alpha = 1) {
   
   ##pal <- read.table("http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt", header = TRUE, colClasses = "integer", comment.char = "")
   ##cols <- rgb(pal[,2], pal[,3], pal[,4], maxColorValue = 255)

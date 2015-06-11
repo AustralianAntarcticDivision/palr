@@ -47,10 +47,10 @@ plot(oisst)
 ```
 
 The default plot colours uses a setting provided by the raster package, but we have SST data in degrees Celsius so we can use the
-`sst.pal` function to give specific colours for particular temperatures. The full range of the temperatures is shown on the plot legend, even though our data only has values in the range `r format(cellStats(oisst, range), digits = 2)`. 
+`sstPal` function to give specific colours for particular temperatures. The full range of the temperatures is shown on the plot legend, even though our data only has values in the range `r format(cellStats(oisst, range), digits = 2)`. 
 
 ```{r}
-sstcols <- sst.pal(palette = TRUE)
+sstcols <- sstPal(palette = TRUE)
 plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 ```
 

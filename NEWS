@@ -1,3 +1,7 @@
+dev
+
+o renamed functions to camel case
+
     VERSION 0.0.2
 
 o added ice.pal
