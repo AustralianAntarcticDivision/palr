@@ -46,7 +46,7 @@ NULL
 ##' @export
 ice.pal <- function(x, palette = FALSE, alpha = 1) {
   breaks <- .seaice.de()$breaks
-  cols <- .seaice.de()$cols  
+  cols <- .seaice.de()$col  
   hexalpha <- as.hexmode(round(255 * alpha))
   if (nchar(hexalpha) == 1L) hexalpha <- paste(rep(hexalpha, 2L), collapse = "")
   cols <- paste0(cols, hexalpha)
