@@ -4,7 +4,29 @@
 #' @name palr
 NULL
 
+hexalpha <- function(a) {
+  as.hexmode(round(255 * a))
+}
 
+
+#' Colour to hex conversion. 
+#' 
+#' Create colours from colour names in one easy step. 
+#'
+#' 
+#' @param x vector of colour names or hex strings
+#' @param alpha optional transparency value in [0,1], can be per colour in \code{x}
+#'
+#' @return character string of hex colours
+#' @export
+#'
+#' @examples
+#' col2hex(c("aliceblue", "firebrick"), alpha = c(1, .5))
+#' col2hex(c("#FFFFFF", "#123456FF"), alpha = 0.1)
+col2hex <- function(x, alpha = 1) {
+  m <- rbind(col2rgb(x)/255,hexalpha(alpha)/255) 
+    apply(m, 2, function(x) do.call(rgb, as.list(x)))
+}
 ## http://www.iup.uni-bremen.de/seaice/amsr/README_GEOTIFF.txt
 ##The colortable is adapted from the NIC colortable used for sea ice data (http://www.natice.noaa.gov):
 ##  R (red)	G (green)	B (blue)
