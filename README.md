@@ -26,7 +26,7 @@ This repository holds the _current development version_ of the contributed R-pac
 This development version is more recent than the current *release* of `palr` on CRAN.
 
 Users of `palr` are encouraged to report bugs and make feature
-requests here (press *issue* in the menu on the right to start a new bug report or feature request).
+requests here (click *Issues* in the menu on the right to start a new bug report or feature request).
 
 Feel free to fork `palr` and make pull requests. 
 
