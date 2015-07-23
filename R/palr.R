@@ -25,7 +25,7 @@ hexalpha <- function(a) {
 #' col2hex(c("#FFFFFF", "#123456FF"), alpha = 0.1)
 col2hex <- function(x, alpha = 1) {
   m <- rbind(col2rgb(x)/255,hexalpha(alpha)/255) 
-  rgb(m[1,], m[2,], m[3,], m[,4])
+  rgb(m[1,], m[2,], m[3,], m[4,])
 }
 ## http://www.iup.uni-bremen.de/seaice/amsr/README_GEOTIFF.txt
 ##The colortable is adapted from the NIC colortable used for sea ice data (http://www.natice.noaa.gov):
