@@ -16,6 +16,7 @@ There are three main ways of working with palr palette functions, which have nam
  
 There is a vignette illustrating basic usage, this can be read on CRAN or loaded from within R. 
 
+
 [palr vignette](http://cran.rstudio.com/web/packages/palr/vignettes/palr.html)
 
 Run this code to load the vignette within R: 
