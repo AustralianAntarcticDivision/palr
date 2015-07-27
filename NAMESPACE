@@ -3,4 +3,5 @@
 export(chlPal)
 export(col2hex)
 export(icePal)
+export(mk_timePal)
 export(sstPal)
