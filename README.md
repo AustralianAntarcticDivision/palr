@@ -14,7 +14,7 @@ There are four main ways of working with palr palette functions, which have name
 * `icePal(data)` return the right colour for values in `data`
 * `icePal(palette = TRUE)` returns the entire palette, with colours `cols` and intervals `breaks`
 * `tfun <- mk_timePal(datetimes, pal); plot(x, tfun(dt))` match date-times to a palette, or palette function. 
-* 
+
 There is a vignette illustrating basic usage, this can be read on CRAN or loaded from within R. 
 
 
