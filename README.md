@@ -8,12 +8,13 @@ palr
 
 `palr` provides colour palettes for data, based on some well known remotely sensed data sets for sea ice concentration, sea surface temperature and chlorophyll-a. 
 
-There are three main ways of working with palr palette functions, which have names like `icePal`, `chlPal` and `sstPal` for ice, chlorophyll-a and sst respectively.  
+There are four main ways of working with palr palette functions, which have names like `icePal`, `chlPal` and `sstPal` for ice, chlorophyll-a and sst respectively and  `mk_timePal` for creating a time-mapped palette function.  
 
 * `icePal(n)` return n colours from the palette
 * `icePal(data)` return the right colour for values in `data`
 * `icePal(palette = TRUE)` returns the entire palette, with colours `cols` and intervals `breaks`
- 
+* `tfun <- mk_timePal(datetimes, pal); plot(x, tfun(dt))` match date-times to a palette, or palette function. 
+
 There is a vignette illustrating basic usage, this can be read on CRAN or loaded from within R. 
 
 
