@@ -8,6 +8,16 @@ hexalpha <- function(a) {
   as.hexmode(round(255 * a))
 }
 
+#' palette for chl to match ACE/Matlab maps
+chlPal_AA <- function() {
+jet.colors <-
+     colorRampPalette(c("#00007F", "blue", "#007FFF", "cyan",
+                                              "#7FFF7F", "yellow", "#FF7F00", "red", "#7F0000"), alpha = TRUE)
+
+  cols <- gsub("FF$", "CC", jet.colors(100))
+  brks <- c(seq(0, 2.5, length = length(cols) + 1))
+
+}
 
 #' Colour to hex conversion. 
 #' 
