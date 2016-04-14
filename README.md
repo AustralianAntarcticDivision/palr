@@ -1,7 +1,4 @@
 [![Travis-CI Build Status](https://travis-ci.org/AustralianAntarcticDivision/palr.svg?branch=master)](https://travis-ci.org/AustralianAntarcticDivision/palr)
-[![](http://www.r-pkg.org/badges/version/palr)](http://www.r-pkg.org/pkg/palr)
-[![](http://cranlogs.r-pkg.org/badges/palr)](http://www.r-pkg.org/pkg/palr)
-
 
 palr
 ========
