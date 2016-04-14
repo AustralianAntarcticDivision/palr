@@ -3,6 +3,10 @@ title: "Chl-a scale"
 author: "Michael Sumner"
 date: "8/24/2015"
 output: html_document
+vignette: >
+  %\VignetteIndexEntry{Colour palettes}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 We need to plot satellite remote sensing chlorophyll-a data with the NASA palette and a correct
