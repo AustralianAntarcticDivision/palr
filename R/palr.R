@@ -2,7 +2,11 @@
 #'
 #' @docType package
 #' @name palr
+#' @importFrom grDevices col2rgb colorRampPalette rgb
+#' @importFrom utils  head
+
 NULL
+
 
 hexalpha <- function(a) {
   as.hexmode(round(255 * a))

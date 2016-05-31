@@ -1,11 +1,12 @@
-dev
+    VERSION 0.0.6
+
+o fixes for 3.3.0
 
 o added bathyDeepPal
 
      VERSION 0.0.5
      
 o new function mk_timePal
-
 
      VERSION 0.0.4
 

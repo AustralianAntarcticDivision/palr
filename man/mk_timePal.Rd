@@ -17,17 +17,4 @@ function of date-time
 \description{
 Create a time-index colour map.
 }
-\examples{
-library(trip)
-library(adehabitatLT)
-tr <- as.data.frame(as.trip(albatross))
-trs <- split(tr, tr$id)
-palfun <- mk_timePal(tr$date, colorRampPalette(c("red", "blue")))
-plot(tr$x, tr$y, pch = ".")
-for (i in seq_along(trs)) {
-  for (j in seq(nrow(trs[[i]]))[-1]) {
-    lines(trs[[i]][(j-1):j, c("x", "y")], col = palfun(trs[[i]]$date[j]))
-  }
-}
-}
 
