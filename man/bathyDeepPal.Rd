@@ -24,6 +24,6 @@ The palette functions operate in 3 modes:
 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
 }
 \references{
-Derived from maps created in Matlab by Emmanuel  Laurenceau.
+Derived from maps created in Matlab by Emmanuel Laurenceau.
 }
 
