@@ -10,7 +10,7 @@
 ##' @param x a vector of data values or a single num (n)
 ##' @param palette logical, if \code{TRUE} return a list with matching colours and values
 ##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from maps created in Matlab by Emmanuel  Laurenceau. 
+##' @references Derived from maps created in Matlab by Emmanuel Laurenceau. 
 ##' @return colours, palette, or function, see Details
 bathyDeepPal <- function(x, palette = FALSE, alpha = 1) {
   breaks <- c(-5500, seq(-5000, -1000, by = 1000), -500,  0)
