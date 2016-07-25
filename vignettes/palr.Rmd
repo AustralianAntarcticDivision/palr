@@ -1,7 +1,7 @@
 ---
 title: "Colour palettes for data in palr"
 date: "`r Sys.Date()`"
-output: html_document
+output: html_vignette
 vignette: >
   %\VignetteIndexEntry{Colour palettes}
   %\VignetteEngine{knitr::rmarkdown}
@@ -12,7 +12,6 @@ vignette: >
 ##knitr::opts_chunk$set(collapse = TRUE, comment = "")
 library(palr)
 library(raster)
-load(system.file("extdata", "oisst.rda", package = "palr"))
 ```
 
 # palr
@@ -35,7 +34,7 @@ The `oisst` data set is a subset the NOAA 1/4° daily Optimum Interpolation Sea 
 ```{r}
 library(raster)
 library(palr)
-load(system.file("extdata", "oisst.rda", package = "palr"))
+data(oisst)
 plot(oisst)
 ```
 

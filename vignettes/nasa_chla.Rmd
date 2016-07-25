@@ -2,15 +2,17 @@
 title: "Chlorophyll-a colour scale: the SeaWiFS palette"
 author: "Michael Sumner"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  rmarkdown::html_vignette:
+    fig_width: 7
+    fig_height: 7
 vignette: >
   %\VignetteIndexEntry{NASA ocean colour}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
 
-We need to plot satellite remote sensing chlorophyll-a data with the NASA palette and a correct
-scale. 
+We need to plot satellite remote sensing chlorophyll-a data with the NASA palette and a correct scale. 
 
 The R package *palr* contains a function to return the required colours and values, but it contains a large maximum value to account for large possible summary values. 
 
@@ -26,6 +28,9 @@ sb <- which(pal$breaks >= maxrange[1] & pal$breaks <= maxrange[2])
 plot(pal$breaks, col = pal$cols, log = "y", ylim = maxrange)
 ## select values from the NASA legend
 abline(h = c(0.01, 0.03, 0.1, 0.3, 1, 3, 10))
+```
+
+```{r}
 op <- par(fig = c(0.3, 0.7, 0, 1)); 
 plot(NA_real_, xlim = c(0, 1), ylim = maxrange, xlab = "", ylab = "", log = "y")
 rasterImage(matrix(rev(pal$cols[sb])), 0, 0.01, 1, 10)

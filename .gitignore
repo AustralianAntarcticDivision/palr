@@ -1,6 +1,5 @@
 #################
 ## R packages
-#################
 
 *.Rproj
 *.Rdata
@@ -8,3 +7,4 @@
 .Rbuildignore
 .Rhistory
 .Rproj.user
+inst/doc

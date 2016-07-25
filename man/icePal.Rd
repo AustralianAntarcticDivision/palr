@@ -25,6 +25,16 @@ The palette functions operate in 3 modes:
 2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
 }
+\examples{
+\dontrun{
+library(raster)
+r <- raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule") )
+icp <- icePal(palette = TRUE)
+## The AMSR colours
+plot(r, col = icp$col, zlim = range(icp$breaks), 
+main = sprintf("NSIDC ice \\\\\% \%s", format(getZ(r))))
+}
+}
 \references{
 Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
 }

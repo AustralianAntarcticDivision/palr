@@ -2,7 +2,7 @@
 % Please edit documentation in R/timePal.R
 \name{mk_timePal}
 \alias{mk_timePal}
-\title{Create a time-index colour map.}
+\title{Time-indexed colour.}
 \usage{
 mk_timePal(x, col)
 }
@@ -15,6 +15,19 @@ mk_timePal(x, col)
 function of date-time
 }
 \description{
-Create a time-index colour map.
+Create a time-indexed colour map, useful for maintaining an absolute scale across time series as a function of date-time.
+}
+\examples{
+dts <- seq(as.Date("1749-01-01"), by = "1 month", length.out = length(sunspots))
+d <- data.frame(date = dts, sunspots = as.vector(t(sunspots)))
+tpal <- mk_timePal(d$date, col = sstPal(50))
+par(mfrow  = c(2, 1))
+plot(sunspots ~ date, col = tpal(date), data = d)
+## colours maintained by absolute date
+plot(sunspots ~ date, col = tpal(date), data = d[1500:1800, ], cex = 2)
+## we can now insert new points and maintain this colour ramp
+d2 <- data.frame(date = seq(min(d$date), max(d$date), by = "5 days"))
+d2$sunspots <- approxfun(d$date, d$sunspots)(d2$date)
+points(sunspots ~ date, col = tpal(date), data = d2, pch = 19, cex = 0.5)
 }
 

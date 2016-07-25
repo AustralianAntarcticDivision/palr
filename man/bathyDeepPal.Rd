@@ -2,7 +2,7 @@
 % Please edit documentation in R/bathy.R
 \name{bathyDeepPal}
 \alias{bathyDeepPal}
-\title{Deep bathymetry colours.}
+\title{Bathymetry}
 \usage{
 bathyDeepPal(x, palette = FALSE, alpha = 1)
 }
@@ -17,13 +17,17 @@ bathyDeepPal(x, palette = FALSE, alpha = 1)
 colours, palette, or function, see Details
 }
 \description{
+Deep bathymetry colours.
+}
+\details{
 Colour ramp suitable for deep waters (-5500) to sea level. 
 The palette functions operate in 3 modes: 
 1) n colours - Pal(6) - returns 6 colours from the palette
 2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
-}
-\references{
 Derived from maps created in Matlab by Emmanuel Laurenceau.
+}
+\examples{
+plot(1:15, pch = 19, cex = 4, col  = bathyDeepPal(15))
 }
 

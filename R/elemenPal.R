@@ -1,3 +1,6 @@
+
+# person("Tomas", "Remenyi", role = "ctb", comment = "provided colours for elemenPal")
+
 UsefulColoursList <- c(
   carbon = "black",
   silver = "grey",
@@ -16,7 +19,7 @@ enames <- c(C = "carbon", Ag = "silver", Mg = "magnesium", Au = "gold", Al = "al
 Ar = "argon", I = "iodine", K = "potassium", As = "arsenic", Ba = "barium", U = "uranium"
 )
 
-elemenPal <- function(x) {
+elementPal <- function(x) {
     test <- grepl(tolower(x), tolower(enames))
     if (!any(test)) {
         test <- grepl( tolower(x), tolower(names(enames)))
@@ -27,5 +30,4 @@ elemenPal <- function(x) {
   ind <- which(test)
   }
   UsefulColoursList[ind]
-    
 }

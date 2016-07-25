@@ -1,11 +1,4 @@
-#' palr: colours for data
-#'
-#' @docType package
-#' @name palr
-#' @importFrom grDevices col2rgb colorRampPalette rgb
-#' @importFrom utils  head
 
-NULL
 
 
 hexalpha <- function(a) {
@@ -165,17 +158,19 @@ structure(list(V1 = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 "V2", "V3"), class = "data.frame", row.names = c(NA, -500L))
 
 }
-#' palette for chl to match ACE/Matlab maps
-chlPal_AA <- function() {
-jet.colors <-
-     colorRampPalette(c("#00007F", "blue", "#007FFF", "cyan",
-                                              "#7FFF7F", "yellow", "#FF7F00", "red", "#7F0000"), alpha = TRUE)
-
-  cols <- gsub("FF$", "CC", jet.colors(100))
-  brks <- c(seq(0, 2.5, length = length(cols) + 1))
 
 
-}
+# #' palette for chl to match ACE/Matlab maps
+# chlPal_AA <- function() {
+# jet.colors <-
+#      colorRampPalette(c("#00007F", "blue", "#007FFF", "cyan",
+#                                               "#7FFF7F", "yellow", "#FF7F00", "red", "#7F0000"), alpha = TRUE)
+# 
+#   cols <- gsub("FF$", "CC", jet.colors(100))
+#   brks <- c(seq(0, 2.5, length = length(cols) + 1))
+# 
+# 
+# }
 
 #' Colour to hex conversion. 
 #' 
@@ -269,20 +264,29 @@ col2hex <- function(x, alpha = 1) {
     "#000000", "#000000", "#000000", "#000000", "#000000", "#646464", 
     "#000000", "#000000", "#000000", "#000000")
 }
-##' Sea ice colours
-##' 
-##' Colours for sea ice. 
-##' 
-##' The palette functions operate in 3 modes: 
-##' 1) n colours - Pal(6) - returns 6 colours from the palette
-##' 2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
-##' 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
-##' @param x a vector of data values or a single num (n)
-##' @param palette logical, if \code{TRUE} return a list with matching colours and values
-##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
-##' @return colours, palette, or function, see Details
-##' @export
+#' Sea ice colours
+#' 
+#' Colours for sea ice. 
+#' 
+#' The palette functions operate in 3 modes: 
+#' 1) n colours - Pal(6) - returns 6 colours from the palette
+#' 2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
+#' 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
+#' @param x a vector of data values or a single num (n)
+#' @param palette logical, if \code{TRUE} return a list with matching colours and values
+#' @param alpha value in 0,1 to specify opacity
+#' @references Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
+#' @return colours, palette, or function, see Details
+#' @export
+#' @examples 
+#' \dontrun{
+#' library(raster)
+#' r <- raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule") )
+#' icp <- icePal(palette = TRUE)
+#' ## The AMSR colours
+#' plot(r, col = icp$col, zlim = range(icp$breaks), 
+#' main = sprintf("NSIDC ice \\% %s", format(getZ(r))))
+#' }
 icePal <- function(x, palette = FALSE, alpha = 1) {
   
   cols <- head(.amsrecols(), 201)
@@ -305,15 +309,20 @@ icePal <- function(x, palette = FALSE, alpha = 1) {
 
 
 
-##' SST colours
-##'
-##' @title SST colours
-##' @param x a vector of data values or a single number
-##' @param palette logical, if \code{TRUE} return a list with matching colours and values
-##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
-##' @return colours, palette, or function, see Details
-##' @export
+#' SST colours
+#'
+#' @title SST colours
+#' @param x a vector of data values or a single number
+#' @param palette logical, if \code{TRUE} return a list with matching colours and values
+#' @param alpha value in 0,1 to specify opacity
+#' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
+#' @return colours, palette, or function, see Details
+#' @export
+#' @examples 
+#' library(raster)
+#' data(oisst)
+#' sstcols <- sstPal(palette = TRUE)
+#' plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 sstPal <- function(x, palette = FALSE, alpha = 1) {
   ##pal <- read.table("http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt", header = TRUE, colClasses = "integer", comment.char = "")
   ##cols <- rgb(pal[,2], pal[,3], pal[,4], maxColorValue = 255)
@@ -381,40 +390,40 @@ sstPal <- function(x, palette = FALSE, alpha = 1) {
 
 
 
-##' Ocean colour palette for chlorophyll-a.
-##'
-##' Flexible control of the chlorophyll-a palette. If \code{x} is a
-##' single number, the function returns that many colours evenly
-##' spaced from the palette. If \code{x} is a vector of multiple
-##' values the palette is queried for colours matching those values,
-##' and these are returned. If \code{x} is missing and \code{palette}
-##' is \code{FALSE} then a function is returned that will generate n
-##' evenly spaced colours from the palette, as per
-##' \code{\link{colorRampPalette}}.
-##' @title Ocean colour colours for chlorophyll-a.
-##' @param x a vector of data values or a single number
-##' @param palette logical, if \code{TRUE} return a list with matching colours and values
-##' @param alpha value in 0,1 to specify opacity
-##' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt}.
-##' @return colours, palette, or function, see Details
-##' @export
-##' @examples
-##' \dontrun{
-##' chl <- raadtools::readchla(xylim = c(100, 110, -50, -40))
-##' ## just get a small number of evenly space colours
-##' plot(chl, col = chlPal(10))
-##' ## store the full palette and work with values and colours
-##' pal <- chlPal()
-##' ## the standard full palette
-##' plot(chl, breaks = pal$breaks, col = pal$cols)
-##' ## a custom set of values with matching colours
-##' plot(chl, col = chlPal(pal$breaks[seq(1, length(pal$breaks), length = 10)]))
-##' ## any number of colours stored as a function
-##' myfun <- chlPal()
-##' plot(chl, col = myfun(18))
-##' ## just n colours
-##' plot(chl, col = chlPal(18))
-##' }
+#' Ocean colour palette for chlorophyll-a.
+#'
+#' Flexible control of the chlorophyll-a palette. If \code{x} is a
+#' single number, the function returns that many colours evenly
+#' spaced from the palette. If \code{x} is a vector of multiple
+#' values the palette is queried for colours matching those values,
+#' and these are returned. If \code{x} is missing and \code{palette}
+#' is \code{FALSE} then a function is returned that will generate n
+#' evenly spaced colours from the palette, as per
+#' \code{\link{colorRampPalette}}.
+#' @title Ocean colour colours for chlorophyll-a.
+#' @param x a vector of data values or a single number
+#' @param palette logical, if \code{TRUE} return a list with matching colours and values
+#' @param alpha value in 0,1 to specify opacity
+#' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt}.
+#' @return colours, palette, or function, see Details
+#' @export
+#' @examples
+#' \dontrun{
+#' chl <- raadtools::readchla(xylim = c(100, 110, -50, -40))
+#' ## just get a small number of evenly space colours
+#' plot(chl, col = chlPal(10))
+#' ## store the full palette and work with values and colours
+#' pal <- chlPal()
+#' ## the standard full palette
+#' plot(chl, breaks = pal$breaks, col = pal$cols)
+#' ## a custom set of values with matching colours
+#' plot(chl, col = chlPal(pal$breaks[seq(1, length(pal$breaks), length = 10)]))
+#' ## any number of colours stored as a function
+#' myfun <- chlPal()
+#' plot(chl, col = myfun(18))
+#' ## just n colours
+#' plot(chl, col = chlPal(18))
+#' }
 chlPal <- function(x, palette = FALSE, alpha = 1) {
   
   ##pal <- read.table("http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt", header = TRUE, colClasses = "integer", comment.char = "")
@@ -485,30 +494,30 @@ chlPal <- function(x, palette = FALSE, alpha = 1) {
 
 
 
-# ##' Colours for data
-# ##'
-# ##' Data levels and colour palettes
-# ##' @author Michael D. Sumner \email{michael.sumner@@aad.gov.au}
-# ##'
-# ##' Maintainer: Michael D. Sumner \email{michael.sumner@@aad.gov.au}
-# ##'
-# ##' @name palr
-# ##' @docType package
-# ##' @keywords package
+# #' Colours for data
+# #'
+# #' Data levels and colour palettes
+# #' @author Michael D. Sumner \email{michael.sumner@@aad.gov.au}
+# #'
+# #' Maintainer: Michael D. Sumner \email{michael.sumner@@aad.gov.au}
+# #'
+# #' @name palr
+# #' @docType package
+# #' @keywords package
 # NULL
 # 
-# ##' Colours for data
-# ##'
-# ##' Colour palette for data
-# ##' @title Palette builder
-# ##' @param x number of colours to return, or vector of breaks to
-# ##' return colours for
-# ##' @param pal name of the palette to use
-# ##' @param breaks return break values as well as colours?
-# ##' @return colours in hex format and data values
-# ##' @examples
-# ##' cols <- palbuilder(10)
-# ##' @export
+# #' Colours for data
+# #'
+# #' Colour palette for data
+# #' @title Palette builder
+# #' @param x number of colours to return, or vector of breaks to
+# #' return colours for
+# #' @param pal name of the palette to use
+# #' @param breaks return break values as well as colours?
+# #' @return colours in hex format and data values
+# #' @examples
+# #' cols <- palbuilder(10)
+# #' @export
 # palbuilder <- function(x, pal = "chl_standard", breaks = FALSE) {
 #     .pal <- .load_pal(pal)
 #     if (length(x) == 1L) {
@@ -523,24 +532,24 @@ chlPal <- function(x, palette = FALSE, alpha = 1) {
 #     cols
 # }
 # 
-# ##' @rdname palbuilder
-# ##' @export
+# #' @rdname palbuilder
+# #' @export
 # palbreaks <- function(pal) {
 #     .pal <- .load_pal(pal)
 #     .pal$breaks
 # }
-# ##' Colours for data
-# ##'
-# ##' Named palette functions.
-# ##' \code{modis} and \code{seawifs} are aliases.
-# ##' @title Named palettes
-# ##' @aliases seawifs
-# ##' @param x number of colours to return, or vector of breaks to
-# ##' return colours for
-# ##' @param breaks logical, if \code{TRUE} return the breaks values
-# ##' @return colours in hex format, break values if \code{x} is missing
-# ##' and breaks is TRUE, or a list of colours and breaks if
-# ##' @export
+# #' Colours for data
+# #'
+# #' Named palette functions.
+# #' \code{modis} and \code{seawifs} are aliases.
+# #' @title Named palettes
+# #' @aliases seawifs
+# #' @param x number of colours to return, or vector of breaks to
+# #' return colours for
+# #' @param breaks logical, if \code{TRUE} return the breaks values
+# #' @return colours in hex format, break values if \code{x} is missing
+# #' and breaks is TRUE, or a list of colours and breaks if
+# #' @export
 # modis <- function(x, breaks = FALSE) {
 #     palbuilder(x = x, pal = "modis", breaks = breaks)
 # }
@@ -654,35 +663,35 @@ chlPal <- function(x, palette = FALSE, alpha = 1) {
 # 
 
 
-# ##'
-# ##' Colours and breaks for palettes 
-# ##'
-# ##' See Examples for how some of these data were collected from a SEADAS (7) installation.
-# ##' @name colours
-# ##' @references \url{http://seadas.gsfc.nasa.gov/}
-# ##' @docType data
-# ##' @title Data values and matching colour display palette
-# ##' @format A list of lists, each consisting of vectors \code{col} and \code{breaks}.
-# ##' @keywords data
-# ##' @examples
-# ##' names(colours)
-# ##'
-# ##' \dontrun{
-# ##' read.cpd <- function(x) {
-# ##'        txt <- readLines(x)
-# ##'        cold <- read.table(text = sapply(strsplit(grep("^color", txt, value = TRUE), "="), "[", 2), sep = ",")
-# ##'        cold$value <- as.numeric(sapply(strsplit(grep("^sample", txt, value = TRUE), "="), "[", 2))
-# ##'        list(breaks = cold$value, col = rgb(cold[,1], cold[,2], cold[, 3], max = 255))
-# ##'}
-# ##'
-# ##'up <- file.path("C:/Users/michae_sum", ".seadas", "beam-ui", "auxdata", "color-palettes")
-# ##'fs <- list.files(up, pattern = "cpd$")
-# ##'
-# ##'seadas.colours <- vector("list", length(fs))
-# ##'names(seadas.colours) <- gsub(".cpd$", "", fs)
-# ##'for (i in seq_along(fs)) {
-# ##'    seadas.colours[[i]] <- read.cpd(file.path(up, fs[i]))
-# ##'}
-# ##' ## save(seadas.colours, file = "seadas.colours.rda")
-# ##' }
+# #'
+# #' Colours and breaks for palettes 
+# #'
+# #' See Examples for how some of these data were collected from a SEADAS (7) installation.
+# #' @name colours
+# #' @references \url{http://seadas.gsfc.nasa.gov/}
+# #' @docType data
+# #' @title Data values and matching colour display palette
+# #' @format A list of lists, each consisting of vectors \code{col} and \code{breaks}.
+# #' @keywords data
+# #' @examples
+# #' names(colours)
+# #'
+# #' \dontrun{
+# #' read.cpd <- function(x) {
+# #'        txt <- readLines(x)
+# #'        cold <- read.table(text = sapply(strsplit(grep("^color", txt, value = TRUE), "="), "[", 2), sep = ",")
+# #'        cold$value <- as.numeric(sapply(strsplit(grep("^sample", txt, value = TRUE), "="), "[", 2))
+# #'        list(breaks = cold$value, col = rgb(cold[,1], cold[,2], cold[, 3], max = 255))
+# #'}
+# #'
+# #'up <- file.path("C:/Users/michae_sum", ".seadas", "beam-ui", "auxdata", "color-palettes")
+# #'fs <- list.files(up, pattern = "cpd$")
+# #'
+# #'seadas.colours <- vector("list", length(fs))
+# #'names(seadas.colours) <- gsub(".cpd$", "", fs)
+# #'for (i in seq_along(fs)) {
+# #'    seadas.colours[[i]] <- read.cpd(file.path(up, fs[i]))
+# #'}
+# #' ## save(seadas.colours, file = "seadas.colours.rda")
+# #' }
 # NULL
