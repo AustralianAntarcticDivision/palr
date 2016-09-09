@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>bathyDeepPal. palr 0.0.6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">palr 0.0.6</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Bathymetry</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='bathyDeepPal.html'>bathyDeepPal</a></span><span class="keyword">(</span><span class="symbol">x</span><span class="keyword">,</span> <span class="argument">palette</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="number">FALSE</span><span class="keyword">,</span> <span class="argument">alpha</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="number">1</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>x</dt>
+      <dd>a vector of data values or a single num (n)</dd>
+      <dt>palette</dt>
+      <dd>logical, if <code>TRUE</code> return a list with matching colours and values</dd>
+      <dt>alpha</dt>
+      <dd>value in 0,1 to specify opacity</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+colours, palette, or function, see Details
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Deep bathymetry colours.</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p>Colour ramp suitable for deep waters (-5500) to sea level. 
+The palette functions operate in 3 modes: 
+1) n colours - Pal(6) - returns 6 colours from the palette
+2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
+3) palette   - Pal(palette = TRUE) - return the full palette and breaks
+Derived from maps created in Matlab by Emmanuel Laurenceau.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="functioncall"><a href='http://www.rdocumentation.org/packages/raster/topics/plot'>plot</a></span><span class="keyword">(</span><span class="number">1</span><span class="keyword">:</span><span class="number">15</span><span class="keyword">,</span> <span class="argument">pch</span> <span class="argument">=</span> <span class="number">19</span><span class="keyword">,</span> <span class="argument">cex</span> <span class="argument">=</span> <span class="number">4</span><span class="keyword">,</span> <span class="argument">col</span>  <span class="argument">=</span> <span class="functioncall"><a href='bathyDeepPal.html'>bathyDeepPal</a></span><span class="keyword">(</span><span class="number">15</span><span class="keyword">)</span><span class="keyword">)</span></div>
+<p><img src='bathyDeepPal-2.png' alt='' width='540' height='400' /></p></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>bathyDeepPal</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

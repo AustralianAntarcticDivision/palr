@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>mk_timePal. palr 0.0.6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">palr 0.0.6</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Time-indexed colour.</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='mk_timePal.html'>mk_timePal</a></span><span class="keyword">(</span><span class="symbol">x</span><span class="keyword">,</span> <span class="symbol">col</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>x</dt>
+      <dd>date-times</dd>
+      <dt>col</dt>
+      <dd>colours, can be a function or an actual set of colours</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+function of date-time
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Create a time-indexed colour map, useful for maintaining an absolute scale across time series as a function of date-time.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="symbol">dts</span> <span class="assignement">&lt;-</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span><span class="keyword">(</span><span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span><span class="keyword">(</span><span class="string">"1749-01-01"</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">by</span> <span class="argument">=</span> <span class="string">"1 month"</span><span class="keyword">,</span> <span class="argument">length.out</span> <span class="argument">=</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/length'>length</a></span><span class="keyword">(</span><span class="symbol">sunspots</span><span class="keyword">)</span><span class="keyword">)</span>
+<span class="symbol">d</span> <span class="assignement">&lt;-</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span><span class="keyword">(</span><span class="argument">date</span> <span class="argument">=</span> <span class="symbol">dts</span><span class="keyword">,</span> <span class="argument">sunspots</span> <span class="argument">=</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/raster/topics/as.matrix'>as.vector</a></span><span class="keyword">(</span><span class="functioncall"><a href='http://www.rdocumentation.org/packages/raster/topics/transpose'>t</a></span><span class="keyword">(</span><span class="symbol">sunspots</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">)</span>
+<span class="symbol">tpal</span> <span class="assignement">&lt;-</span> <span class="functioncall"><a href='mk_timePal.html'>mk_timePal</a></span><span class="keyword">(</span><span class="symbol">d</span><span class="keyword">$</span><span class="symbol">date</span><span class="keyword">,</span> <span class="argument">col</span> <span class="argument">=</span> <span class="functioncall"><a href='sstPal.html'>sstPal</a></span><span class="keyword">(</span><span class="number">50</span><span class="keyword">)</span><span class="keyword">)</span>
+<span class="functioncall"><a href='http://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span><span class="keyword">(</span><span class="argument">mfrow</span>  <span class="argument">=</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/c'>c</a></span><span class="keyword">(</span><span class="number">2</span><span class="keyword">,</span> <span class="number">1</span><span class="keyword">)</span><span class="keyword">)</span>
+<span class="functioncall"><a href='http://www.rdocumentation.org/packages/raster/topics/plot'>plot</a></span><span class="keyword">(</span><span class="symbol">sunspots</span> <span class="keyword">~</span> <span class="symbol">date</span><span class="keyword">,</span> <span class="argument">col</span> <span class="argument">=</span> <span class="functioncall">tpal</span><span class="keyword">(</span><span class="symbol">date</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">data</span> <span class="argument">=</span> <span class="symbol">d</span><span class="keyword">)</span>
+<span class="comment">## colours maintained by absolute date</span>
+<span class="functioncall"><a href='http://www.rdocumentation.org/packages/raster/topics/plot'>plot</a></span><span class="keyword">(</span><span class="symbol">sunspots</span> <span class="keyword">~</span> <span class="symbol">date</span><span class="keyword">,</span> <span class="argument">col</span> <span class="argument">=</span> <span class="functioncall">tpal</span><span class="keyword">(</span><span class="symbol">date</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">data</span> <span class="argument">=</span> <span class="symbol">d</span><span class="keyword">[</span><span class="number">1500</span><span class="keyword">:</span><span class="number">1800</span><span class="keyword">,</span> <span class="keyword">]</span><span class="keyword">,</span> <span class="argument">cex</span> <span class="argument">=</span> <span class="number">2</span><span class="keyword">)</span></div>
+<div class='input'><span class="comment">## we can now insert new points and maintain this colour ramp</span>
+<span class="symbol">d2</span> <span class="assignement">&lt;-</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span><span class="keyword">(</span><span class="argument">date</span> <span class="argument">=</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span><span class="keyword">(</span><span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/Extremes'>min</a></span><span class="keyword">(</span><span class="symbol">d</span><span class="keyword">$</span><span class="symbol">date</span><span class="keyword">)</span><span class="keyword">,</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/Extremes'>max</a></span><span class="keyword">(</span><span class="symbol">d</span><span class="keyword">$</span><span class="symbol">date</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">by</span> <span class="argument">=</span> <span class="string">"5 days"</span><span class="keyword">)</span><span class="keyword">)</span>
+<span class="symbol">d2</span><span class="keyword">$</span><span class="symbol">sunspots</span> <span class="assignement">&lt;-</span> <span class="functioncall"><a href='http://www.rdocumentation.org/packages/stats/topics/approxfun'>approxfun</a></span><span class="keyword">(</span><span class="symbol">d</span><span class="keyword">$</span><span class="symbol">date</span><span class="keyword">,</span> <span class="symbol">d</span><span class="keyword">$</span><span class="symbol">sunspots</span><span class="keyword">)</span><span class="keyword">(</span><span class="symbol">d2</span><span class="keyword">$</span><span class="symbol">date</span><span class="keyword">)</span>
+<span class="functioncall"><a href='http://www.rdocumentation.org/packages/graphics/topics/points'>points</a></span><span class="keyword">(</span><span class="symbol">sunspots</span> <span class="keyword">~</span> <span class="symbol">date</span><span class="keyword">,</span> <span class="argument">col</span> <span class="argument">=</span> <span class="functioncall">tpal</span><span class="keyword">(</span><span class="symbol">date</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">data</span> <span class="argument">=</span> <span class="symbol">d2</span><span class="keyword">,</span> <span class="argument">pch</span> <span class="argument">=</span> <span class="number">19</span><span class="keyword">,</span> <span class="argument">cex</span> <span class="argument">=</span> <span class="number">0.5</span><span class="keyword">)</span></div>
+<p><img src='mk_timePal-3.png' alt='' width='540' height='400' /></p></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>mk_timePal</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

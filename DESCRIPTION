@@ -13,6 +13,7 @@ Suggests:
     knitr,
     raster,
     rmarkdown,
+    sp,
     testthat,
     covr
 VignetteBuilder: knitr
