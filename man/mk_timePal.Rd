@@ -30,4 +30,3 @@ d2 <- data.frame(date = seq(min(d$date), max(d$date), by = "5 days"))
 d2$sunspots <- approxfun(d$date, d$sunspots)(d2$date)
 points(sunspots ~ date, col = tpal(date), data = d2, pch = 19, cex = 0.5)
 }
-

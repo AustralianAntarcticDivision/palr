@@ -12,12 +12,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-
+ <!-- badges: start -->
 [![Linux Build Status](https://travis-ci.org/AustralianAntarcticDivision/palr.svg?branch=master)](https://travis-ci.org/AustralianAntarcticDivision/palr)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/AustralianAntarcticDivision/palr?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/palr)
-[![](http://www.r-pkg.org/badges/version/palr)](http://www.r-pkg.org/pkg/palr)
+[![CRAN status](https://www.r-pkg.org/badges/version/palr)](https://CRAN.R-project.org/package=palr)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/palr)](http://www.r-pkg.org/pkg/palr)
-[![Coverage Status](https://img.shields.io/codecov/c/github/AustralianAntarcticDivision/palr/master.svg)](https://codecov.io/github/AustralianAntarcticDivision/palr?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/AustralianAntarcticDivision/palr/branch/master/graph/badge.svg)](https://codecov.io/gh/AustralianAntarcticDivision/palr?branch=master)
+<!-- badges: end -->
 
 # palr
 

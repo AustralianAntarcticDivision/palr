@@ -50,4 +50,3 @@ plot(chl, col = chlPal(18))
 \references{
 Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt}.
 }
-

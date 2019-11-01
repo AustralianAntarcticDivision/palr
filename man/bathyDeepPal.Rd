@@ -30,4 +30,3 @@ Derived from maps created in Matlab by Emmanuel Laurenceau.
 \examples{
 plot(1:15, pch = 19, cex = 4, col  = bathyDeepPal(15))
 }
-

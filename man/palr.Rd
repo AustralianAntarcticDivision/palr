@@ -8,4 +8,3 @@
 \description{
 palr: colours for data
 }
-

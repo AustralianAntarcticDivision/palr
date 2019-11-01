@@ -28,4 +28,3 @@ plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 \references{
 Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
 }
-

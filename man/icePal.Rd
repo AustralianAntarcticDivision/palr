@@ -38,4 +38,3 @@ main = sprintf("NSIDC ice \\\\\% \%s", format(getZ(r))))
 \references{
 Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
 }
-
