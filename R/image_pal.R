@@ -43,14 +43,13 @@ image_pal <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
     col <- colorRampPalette(col)(length(breaks) - 1)
     outcols <- col[cut(x, breaks)]
   } else {
-    zlim <- range(x, na.rm = TRUE)
+    if (is.null(zlim)) zlim <- range(x, na.rm = TRUE)
 
     x[x < zlim[1]] <- NA
     x[x > zlim[2]] <- NA
-
     outcols <- col[((x - zlim[1L])/diff(zlim)) * (length(col) - 1) + 1]
   }
-  outcols
+  outcols #* is.na(x)  ## zap the colours as well
 }
 
 #' @name image_pal
@@ -68,7 +67,7 @@ image_pal <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
 #'
 #' plotRGB(image_raster(volcano, col = viridis::magma(24)))
 #' }
-image_raster <- function(x, col, ..., breaks = NULL, n = NULL, zlim = range(x[is.finite(x)])) {
+image_raster <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
   if (!requireNamespace("raster", quietly = TRUE)) stop("raster package is required for 'image_raster()'")
   ## for matrix input
   if (is.matrix(x)) {
@@ -90,9 +89,9 @@ image_raster <- function(x, col, ..., breaks = NULL, n = NULL, zlim = range(x[is
 #' plot(image_stars(x))
 #' plot(image_stars(x, col = rainbow, breaks = c(94, 100, 120, 150, 195)), rgb = 1:3)
 #' }
-image_stars <- function(x, col, ..., breaks = NULL, n = NULL, zlim = range(x[is.finite(x)])) {
+image_stars <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
   if (!requireNamespace("stars", quietly = TRUE)) stop("stars package is required for 'image_stars()'")
-  hex <- image_pal(x[[1L]], col = col, ..., breaks = breaks, n = n, zlim = zlim)  ## we aint proxy yet
+  hex <- image_pal(as.vector(unclass(x[[1L]])), col = col, ..., breaks = breaks, n = n, zlim = zlim)  ## we aint proxy yet
   dm <- dim(x[[1L]])
   ## this is not completely proper stars fix-up yet :)
   out <- c(x, x, x, along = 3)

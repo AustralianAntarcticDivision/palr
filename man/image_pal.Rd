@@ -8,11 +8,9 @@
 \usage{
 image_pal(x, col, ..., breaks = NULL, n = NULL, zlim = NULL)
 
-image_raster(x, col, ..., breaks = NULL, n = NULL,
-  zlim = range(x[is.finite(x)]))
+image_raster(x, col, ..., breaks = NULL, n = NULL, zlim = NULL)
 
-image_stars(x, col, ..., breaks = NULL, n = NULL,
-  zlim = range(x[is.finite(x)]))
+image_stars(x, col, ..., breaks = NULL, n = NULL, zlim = NULL)
 }
 \arguments{
 \item{x}{raster of values (single layer only)}
