@@ -23,4 +23,3 @@ ftp://eclipse.ncdc.noaa.gov/pub/OI-daily/daily-sst.pdf.
 Climatology is based on 1971-2000 OI.v2 SST, Satellite data: Navy  NOAA19 
 METOP AVHRR, Ice data: #' NCEP ice Source: NOAA/National Climatic Data Center.
 }
-
