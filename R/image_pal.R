@@ -18,11 +18,11 @@
 #' @param n optionally used to specify density of colours from `col` (ignored if `breaks` is set)
 #' @param zlim numeric range to clamp values to an absolute scale (ignored if `breaks` is set)
 #'
-#' @return for `palr()` a vector of hex colours, for `palr_raster` and `palr_stars` a raster or stars object with 3 channel RGB (range 0,255)
+#' @return for `image_pal()` a vector of hex colours, for `image_raster` and `image_stars` a raster or stars object with 3 channel RGB (range 0,255)
 #' @export
-#' @aliases palr_raster palr_stars
+#' @aliases image_raster image_stars
 #' @export
-palr <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
+image_pal <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
 
   if (missing(col)) {
     ## just not sure how to use hcl.colors to get a function, so ...
@@ -53,46 +53,46 @@ palr <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
   outcols
 }
 
-#' @name palr
+#' @name image_pal
 #' @export
 #' @examples
 #' library(raster)
-#' im <- palr_raster(volcano)
+#' im <- image_raster(volcano)
 #' if (requireNamespace("raster", quietly = TRUE)) {
 #' plotRGB(im)
 #' vv <- unique(quantile(volcano, seq(0, 1, length = 12)))
-#' plotRGB(palr_raster(volcano, breaks = vv))
-#' plotRGB(palr_raster(volcano, breaks = vv[-c(4, 6)], col = gray.colors(9)))
-#' plotRGB(palr_raster(volcano, n = 4))
-#' plotRGB(palr_raster(volcano, col = grey(seq(0.2, 0.8, by = 0.1))))
+#' plotRGB(image_raster(volcano, breaks = vv))
+#' plotRGB(image_raster(volcano, breaks = vv[-c(4, 6)], col = gray.colors(9)))
+#' plotRGB(image_raster(volcano, n = 4))
+#' plotRGB(image_raster(volcano, col = grey(seq(0.2, 0.8, by = 0.1))))
 #'
-#' plotRGB(palr_raster(volcano, col = viridis::magma(24)))
+#' plotRGB(image_raster(volcano, col = viridis::magma(24)))
 #' }
-palr_raster <- function(x, col, ..., breaks = NULL, n = NULL, zlim = range(x[is.finite(x)])) {
-  if (!requireNamespace("raster", quietly = TRUE)) stop("raster package is required for 'palr_raster()'")
+image_raster <- function(x, col, ..., breaks = NULL, n = NULL, zlim = range(x[is.finite(x)])) {
+  if (!requireNamespace("raster", quietly = TRUE)) stop("raster package is required for 'image_raster()'")
   ## for matrix input
   if (is.matrix(x)) {
     x <- raster::setExtent(raster::raster(x), raster::extent(0, ncol(x), 0, nrow(x)))
   }
   vv <- raster::values(x[[1L]])
-  outcols <- palr(vv, col = col, ..., breaks = breaks, n = n, zlim = zlim)
+  outcols <- image_pal(vv, col = col, ..., breaks = breaks, n = n, zlim = zlim)
   ## used to need to give a 3 layer brick to setValues, but one layer is enough it expands by the values given
   raster::setValues(raster::brick(x[[1]]), t(col2rgb(outcols)))
 }
-#' @name palr
+#' @name image_pal
 #' @export
 #' @examples
 #' library(stars)
 #' x <- st_as_stars(volcano)
 #' if (!requireNamespace("stars", quietly = TRUE)) {
-#' plot(palr_stars(x), rgb = 1:3)
-#' plot(palr_stars(x, col = gray.colors), rgb = 1:3)
-#' plot(palr_stars(x))
-#' plot(palr_stars(x, col = rainbow, breaks = c(94, 100, 120, 150, 195)), rgb = 1:3)
+#' plot(image_stars(x), rgb = 1:3)
+#' plot(image_stars(x, col = gray.colors), rgb = 1:3)
+#' plot(image_stars(x))
+#' plot(image_stars(x, col = rainbow, breaks = c(94, 100, 120, 150, 195)), rgb = 1:3)
 #' }
-palr_stars <- function(x, col, ..., breaks = NULL, n = NULL, zlim = range(x[is.finite(x)])) {
-  if (!requireNamespace("stars", quietly = TRUE)) stop("stars package is required for 'palr_stars()'")
-  hex <- palr(x[[1L]], col = col, ..., breaks = breaks, n = n, zlim = zlim)  ## we aint proxy yet
+image_stars <- function(x, col, ..., breaks = NULL, n = NULL, zlim = range(x[is.finite(x)])) {
+  if (!requireNamespace("stars", quietly = TRUE)) stop("stars package is required for 'image_stars()'")
+  hex <- image_pal(x[[1L]], col = col, ..., breaks = breaks, n = n, zlim = zlim)  ## we aint proxy yet
   dm <- dim(x[[1L]])
   ## this is not completely proper stars fix-up yet :)
   out <- c(x, x, x, along = 3)
