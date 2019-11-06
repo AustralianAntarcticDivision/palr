@@ -1,0 +1,16 @@
+palr-package	palr
+bathyDeepPal	bathy_deep_pal
+bathy_deep_pal	bathy_deep_pal
+chlPal	chl_pal
+chl_pal	chl_pal
+col2hex	col2hex
+icePal	ice_pal
+ice_pal	ice_pal
+image_pal	image_pal
+image_raster	image_pal
+image_stars	image_pal
+mk_timePal	mk_timePal
+oisst	oisst
+palr	palr
+sstPal	sst_pal
+sst_pal	sst_pal
