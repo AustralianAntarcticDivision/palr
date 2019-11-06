@@ -1,6 +1,10 @@
+## palr 0.1.0
+
+Thank you very much. 
+
 ## Test environments
-* local Windows install, R 3.3.1
-* ubuntu 12.04 (on travis-ci), R 3.3.1
+* local ubuntu install, R 3.6.1
+* ubuntu 14.04 (on travis-ci), R 3.6.1
 * win-builder (devel)
 
 ## R CMD check results
@@ -9,5 +13,4 @@
 
 ## Reverse dependencies
 
-There are no reverse dependencies.
-
+The three reverse dependencies pass check with this version. 

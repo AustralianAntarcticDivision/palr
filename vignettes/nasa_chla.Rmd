@@ -42,7 +42,7 @@ par(op)
 
 Compare these plots with the official NASA legend here. 
 
-http://oceancolor.gsfc.nasa.gov/cgi/l3
+https://oceancolor.gsfc.nasa.gov/l3/
 
 
 

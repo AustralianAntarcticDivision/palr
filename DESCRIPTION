@@ -2,7 +2,7 @@ Package: palr
 Type: Package
 Title: Colour Palettes for Data
 LazyData: yes
-Version: 0.0.6.9002
+Version: 0.1.0
 Authors@R: c(
   person("Michael D.","Sumner", 
   role = c("aut", "cre"), 
@@ -11,7 +11,8 @@ Authors@R: c(
     person("Tomas", "Remenyi", role = "ctb", comment = "Provided colours for element_pal")
  )
 Description: Colour palettes for data, based on some well known public data
-    sets.
+    sets. Includes helper functions to map absolute values to known palettes, and 
+    capture the work of image colour mapping as raster data sets. 
 Depends:
     R (>= 2.10)
 Suggests:

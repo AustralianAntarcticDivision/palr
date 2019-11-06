@@ -322,7 +322,7 @@ icePal <- function(x, palette = FALSE, alpha = 1, ...) {
 #' @param palette logical, if \code{TRUE} return a list with matching colours and values
 #' @param alpha value in 0,1 to specify opacity
 #' @param ... currently ignored
-#' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
+#' @references Derived from a file once found at 'http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt'
 #' @return colours, palette, or function, see Details
 #' @export
 #' @examples
@@ -418,7 +418,7 @@ sstPal <- function(x, palette = FALSE, alpha = 1, ...) {
 #' @param palette logical, if \code{TRUE} return a list with matching colours and values
 #' @param ... currently unused
 #' @param alpha value in 0,1 to specify opacity
-#' @references Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt}.
+#' @references Derived from a file once found at 'http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt'
 #' @return colours, palette, or function, see Details
 #' @export
 #' @examples

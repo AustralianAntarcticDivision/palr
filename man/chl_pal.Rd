@@ -53,5 +53,5 @@ plot(chl, col = chl_pal(18))
 }
 }
 \references{
-Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt}.
+Derived from a file once found at 'http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt'
 }

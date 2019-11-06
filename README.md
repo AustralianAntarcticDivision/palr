@@ -7,8 +7,7 @@
 status](https://travis-ci.org/AustralianAntarcticDivision/palr.svg?branch=master)](https://travis-ci.org/AustralianAntarcticDivision/palr)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/AustralianAntarcticDivision/palr?branch=master&svg=true)](https://ci.appveyor.com/project/AustralianAntarcticDivision/palr)
-[![Codecov test
-coverage](https://codecov.io/gh/AustralianAntarcticDivision/palr/branch/master/graph/badge.svg)](https://codecov.io/gh/AustralianAntarcticDivision/palr?branch=master)
+[![codecov](https://codecov.io/gh/AustralianAntarcticDivision/palr/branch/master/graph/badge.svg)](https://codecov.io/gh/AustralianAntarcticDivision/palr)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/palr)](https://CRAN.R-project.org/package=palr)
 [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/silicate)](https://cran.r-project.org/package=silicate)
@@ -58,5 +57,5 @@ install_github("AustralianAntarcticDivision/palr")
 
 Please note that the palr project is released with a [Contributor Code
 of
-Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html).
+Conduct](https://github.com/AustralianAntarcticDivision/palr/blob/master/CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.

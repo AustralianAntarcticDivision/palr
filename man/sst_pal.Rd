@@ -31,5 +31,5 @@ sstcols <- sst_pal(palette = TRUE)
 plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 }
 \references{
-Derived from \url{http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt}.
+Derived from a file once found at 'http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt'
 }

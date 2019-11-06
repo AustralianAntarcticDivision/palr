@@ -1,4 +1,4 @@
-# palr   dev
+# palr  0.1.0
     
 * New alias functions `bathy_deep_pal()` (bathyDeepPal), `chl_pal()` (chlPal), 
  `ice_pal()` (icePal), `sst_pal()` (sstPal) to start move to consistent and
@@ -9,8 +9,6 @@
  objects from raster and stars format. Both packages now included as Suggests. 
  
 * Converted NEWS to NEWS.md. 
-
-* static docs
 
 #   VERSION 0.0.6
 
