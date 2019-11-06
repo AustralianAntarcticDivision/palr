@@ -23,14 +23,17 @@ knitr::opts_chunk$set(
 # palr
 
 
-`palr` provides colour palettes for data, based on some well known remotely sensed data sets for sea ice concentration, sea surface temperature and chlorophyll-a. 
+`palr` provides colour palettes for data, based on some well known remotely sensed data sets for sea ice concentration, sea surface temperature and chlorophyll-a.  It includes function `image_pal()` to create the data used by the `image()` function *as colours*. 
 
-There are four main ways of working with palr palette functions, which have names like `icePal`, `chlPal` and `sstPal` for ice, chlorophyll-a and sst respectively and  `mk_timePal` for creating a time-mapped palette function.  
+There are five main ways of working with palr palette functions, which have names like `ice_pal()`, `chl_pal()` and `sst_pal()` for ice, chlorophyll-a and sst respectively and  `mk_timePal` for creating a time-mapped palette function.  
 
-* `icePal(n)` return n colours from the palette
-* `icePal(data)` return the right colour for values in `data`
-* `icePal(palette = TRUE)` returns the entire palette, with colours `cols` and intervals `breaks`
+* `ice_pal(n)` return n colours from the palette
+* `ice_pal(data)` return the right colour for values in `data`
+* `ice_pal(palette = TRUE)` returns the entire palette, with colours `cols` and intervals `breaks`
 * `tfun <- mk_timePal(datetimes, pal); plot(x, tfun(dt))` match date-times to a palette, or palette function. 
+* `image_pal(data, col = colors, breaks = breaks)` emulate the behaviour of `image()` but return
+colours as data rather than draw a plot
+
 
 There is a vignette illustrating basic usage, this can be read on CRAN or loaded from within R. 
 
@@ -43,17 +46,6 @@ Run this code to load the vignette within R:
 library(palr)
 vignette("palr")
 ```
-
-This repository holds the _current development version_ of the contributed R-package `palr`.
-
-This development version is more recent than the current *release* of `palr` on CRAN.
-
-Users of `palr` are encouraged to report bugs and make feature
-requests here (click *Issues* in the menu on the right to start a new bug report or feature request).
-
-Feel free to fork `palr` and make pull requests. 
-
-`palr`  is a companion package to the data  package `raadtools`, but is not tied to it. 
 
 ## Installation
 
@@ -74,3 +66,7 @@ If you don't have `devtools` installed you should first run
 ```R
 install.packages('devtools')
 ```
+
+---
+
+Please note that the palr project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

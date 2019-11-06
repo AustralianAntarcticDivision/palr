@@ -2,9 +2,14 @@ Package: palr
 Type: Package
 Title: Colour Palettes for Data
 LazyData: yes
-Version: 0.0.6.9001
-Authors@R: c(person("Michael D.","Sumner", role = c("aut", "cre"), email =
-    "mdsumner@gmail.com"))
+Version: 0.0.6.9002
+Authors@R: c(
+  person("Michael D.","Sumner", 
+  role = c("aut", "cre"), 
+   email = "mdsumner@gmail.com"), 
+   person("Abigael", "Proctor", role = "ctb", comment = "Named the package"),
+    person("Tomas", "Remenyi", role = "ctb", comment = "Provided colours for element_pal")
+ )
 Description: Colour palettes for data, based on some well known public data
     sets.
 Depends:
@@ -17,7 +22,8 @@ Suggests:
     testthat,
     covr,
     stars,
-    viridis
+    viridis,
+    graticule
 VignetteBuilder: knitr
 License: GPL-3
 RoxygenNote: 6.1.1

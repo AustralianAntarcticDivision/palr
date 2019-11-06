@@ -8,8 +8,10 @@ output:
     fig_height: 7
 vignette: >
   %\VignetteIndexEntry{NASA ocean colour}
-  %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 We need to plot satellite remote sensing chlorophyll-a data with the NASA palette and a correct scale. 
@@ -21,7 +23,7 @@ We specify a maximum range on the values, and plot the scale in two different wa
 ```{r}
 maxrange <- c(0.01, 10)
 library(palr)
-pal <- chlPal(palette = TRUE)
+pal <- chl_pal(palette = TRUE)
 
 sb <- which(pal$breaks >= maxrange[1] & pal$breaks <= maxrange[2])
 

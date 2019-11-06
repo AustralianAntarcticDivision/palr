@@ -8,3 +8,5 @@
 ^codecov\.yml$
 ^cran-comments\.md$
 ^palr\.Rproj$
+^CODE_OF_CONDUCT\.md$
+^docs$
