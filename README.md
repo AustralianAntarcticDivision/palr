@@ -36,18 +36,8 @@ time-mapped palette function.
     behaviour of `image()` but return colours as data rather than draw a
     plot
 
-There is a vignette illustrating basic usage, this can be read on CRAN
-or loaded from within R.
-
-[palr
-vignette](https://cran.r-project.org/web/packages/palr/vignettes/palr.html)
-
-Run this code to load the vignette within R:
-
-``` r
-library(palr)
-vignette("palr")
-```
+See the website for documentation:
+<http://australianantarcticdivision.github.io/palr/>
 
 ## Installation
 
@@ -57,18 +47,11 @@ Install the current release from CRAN using
 install.packages("palr")
 ```
 
-The easiest way to install the github version of `palr` is through the
-`devtools` package:
+To install the development version:
 
 ``` r
 library(devtools)
 install_github("AustralianAntarcticDivision/palr")
-```
-
-If you don’t have `devtools` installed you should first run
-
-``` r
-install.packages('devtools')
 ```
 
 -----
