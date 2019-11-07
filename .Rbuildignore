@@ -11,3 +11,4 @@
 ^CODE_OF_CONDUCT\.md$
 ^docs$
 ^revdep$
+^CRAN-RELEASE$
