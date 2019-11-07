@@ -1,6 +1,5 @@
 ---
 title: "Chlorophyll-a colour scale: the SeaWiFS palette"
-author: "Michael Sumner"
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
