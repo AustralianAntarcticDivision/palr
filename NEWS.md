@@ -1,5 +1,8 @@
 # palr  0.1.0
     
+* Behaviour of `image_pal()` tweaked to match that of `graphics::image.default()` more
+ closely.
+ 
 * New alias functions `bathy_deep_pal()` (bathyDeepPal), `chl_pal()` (chlPal), 
  `ice_pal()` (icePal), `sst_pal()` (sstPal) to start move to consistent and
  better names. The old function names are soft deprecated. 

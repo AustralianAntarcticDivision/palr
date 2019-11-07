@@ -44,18 +44,18 @@ image_pal <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
     }
     col <- col(n)
   }
-
-  ## scales::rescale(x)
-  #scl <- function(x) (x - range_x[1L])/diff(range_x)
-  if (!is.null(breaks)) {
+ if (!is.null(breaks)) {
     col <- colorRampPalette(col)(length(breaks) - 1)
     outcols <- col[cut(x, breaks)]
   } else {
     if (is.null(zlim)) zlim <- range(x, na.rm = TRUE)
-
-    x[x < zlim[1]] <- NA
-    x[x > zlim[2]] <- NA
-    outcols <- col[((x - zlim[1L])/diff(zlim)) * (length(col) - 1) + 1]
+    ## --- logic taken from graphics::image.default 2019-11-07
+    z <- (x - zlim[1L])/diff(zlim)
+    nc <- length(col)
+    zi <- floor((nc - 1e-05) * z + 1e-07)
+    zi[zi < 0 | zi >= nc] <- NA
+    ## ---
+    outcols <- col[zi + 1]
   }
   outcols #* is.na(x)  ## zap the colours as well
 }
@@ -67,6 +67,7 @@ image_pal <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
 #' im <- image_raster(volcano)
 #' library(raster)
 #' plotRGB(im)
+#' \donttest{
 #' vv <- unique(quantile(volcano, seq(0, 1, length = 12)))
 #' plotRGB(image_raster(volcano, breaks = vv))
 #' plotRGB(image_raster(volcano, breaks = vv[-c(4, 6)], col = gray.colors(9)))
@@ -74,6 +75,7 @@ image_pal <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
 #' plotRGB(image_raster(volcano, col = grey(seq(0.2, 0.8, by = 0.1))))
 #'
 #' plotRGB(image_raster(volcano, col = viridis::magma(24)))
+#' }
 #' }
 image_raster <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
   if (!requireNamespace("raster", quietly = TRUE)) stop("raster package is required for 'image_raster()'")
@@ -93,9 +95,11 @@ image_raster <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
 #' library(stars)
 #' x <- st_as_stars(volcano)
 #' plot(image_stars(x), rgb = 1:3)
+#' \donttest{
 #' plot(image_stars(x, col = gray.colors), rgb = 1:3)
 #' plot(image_stars(x))
 #' plot(image_stars(x, col = rainbow, breaks = c(94, 100, 120, 150, 195)), rgb = 1:3)
+#' }
 #' }
 image_stars <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
   if (!requireNamespace("stars", quietly = TRUE)) stop("stars package is required for 'image_stars()'")
