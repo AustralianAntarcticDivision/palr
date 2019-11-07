@@ -4,7 +4,7 @@
 \alias{image_pal}
 \alias{image_raster}
 \alias{image_stars}
-\title{Raster data to RGB}
+\title{Map data values to colours}
 \usage{
 image_pal(x, col, ..., breaks = NULL, n = NULL, zlim = NULL)
 
@@ -13,38 +13,47 @@ image_raster(x, col, ..., breaks = NULL, n = NULL, zlim = NULL)
 image_stars(x, col, ..., breaks = NULL, n = NULL, zlim = NULL)
 }
 \arguments{
-\item{x}{raster of values (single layer only)}
+\item{x}{numeric values, raster object (single layer only) or stars object (single variable, 2D array only)}
 
 \item{col}{function to generate colours, or a vector of hex colours}
 
 \item{...}{ignored}
 
-\item{breaks}{optionally used to specify color mapping}
+\item{breaks}{optionally used to specify colour mapping}
 
 \item{n}{optionally used to specify density of colours from `col` (ignored if `breaks` is set)}
 
 \item{zlim}{numeric range to clamp values to an absolute scale (ignored if `breaks` is set)}
 }
 \value{
-for `image_pal()` a vector of hex colours, for `image_raster` and `image_stars` a raster or stars object with 3 channel RGB (range 0,255)
+for `image_pal()` a vector of hex colours, for `image_raster` and `image_stars` a raster or
+stars object with 3 channel RGB (range 0,255)
 }
 \description{
-Map a raster of numeric values to an RGB 3-layer raster brick.
-}
-\details{
 If no `col` is provided, the default image palette is used. The density
 can be controlled with `n` and the mapping  with the optional
 `breaks`. If `breaks` is included as well as `n`, `n` is ignored.
+}
+\details{
+The function `image_pal()` only returns hex character string colours. The function
+`image_raster()` will map a raster of numeric values to an RGB 3-layer (channel) raster brick, and
+`image_stars()` similarly for a 3-dimensional stars object.
 
-Please note that this is fairly wasteful thing to do, the overall data is expanded
-from a single layer to three - it fills a specific task which is to create
-textures for 3D mapping, and this is the only way to do it currently. (Plus
-sometimes it's handy for other reasons, creating PNGs etc.).
+Please note that the expansion to 3-channels is a fairly wasteful thing to do, the overall data is expanded
+from a single layer to three but this faciliates a specific task of creating
+textures for 3D mapping, and this is the only way to do it currently. It's also useful in
+other situations, for controlling exactly the kind of plots we can achieve and for exporting
+to image formats such as 'GeoTIFF' or 'PNG'.
 }
 \examples{
-library(raster)
-im <- image_raster(volcano)
+set.seed(28)
+vals <- sort(rnorm(100))
+cols <- image_pal(vals, zlim = c(-2.4, 2))
+plot(vals, col = cols); abline(h = 2)
+points(vals, pch  = 19, cex = 0.1) ## zlim excluded some of the range
 if (requireNamespace("raster", quietly = TRUE)) {
+im <- image_raster(volcano)
+library(raster)
 plotRGB(im)
 vv <- unique(quantile(volcano, seq(0, 1, length = 12)))
 plotRGB(image_raster(volcano, breaks = vv))
@@ -54,9 +63,9 @@ plotRGB(image_raster(volcano, col = grey(seq(0.2, 0.8, by = 0.1))))
 
 plotRGB(image_raster(volcano, col = viridis::magma(24)))
 }
+if (!requireNamespace("stars", quietly = TRUE)) {
 library(stars)
 x <- st_as_stars(volcano)
-if (!requireNamespace("stars", quietly = TRUE)) {
 plot(image_stars(x), rgb = 1:3)
 plot(image_stars(x, col = gray.colors), rgb = 1:3)
 plot(image_stars(x))
