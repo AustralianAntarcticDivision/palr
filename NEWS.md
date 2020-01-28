@@ -1,3 +1,7 @@
+# palr  0.2.0
+
+* Remove need for sp package by converting example data to a matrix. 
+
 # palr  0.1.0
     
 * Behaviour of `image_pal()` tweaked to match that of `graphics::image.default()` more

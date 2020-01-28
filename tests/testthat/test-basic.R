@@ -19,6 +19,7 @@ test_that("colours give hex", {
 })
 
 test_that("image pal", {
+  skip_on_cran()
   expect_length(image_pal(1:10), 10)
   expect_that(image_pal(1), is_a("character"))
   expect_s4_class(image_raster(volcano), "BasicRaster")

@@ -16,7 +16,6 @@ editor_options:
 ```{r, echo = FALSE, message = FALSE}
 ##knitr::opts_chunk$set(collapse = TRUE, comment = "")
 library(palr)
-library(raster)
 ```
 
 # palr
@@ -34,37 +33,23 @@ There are three main ways of working with palr palette functions.
 
 Here we show examples of the use of palr functions. 
 
-The `oisst` data set is a subset the NOAA 1/4° daily Optimum Interpolation Sea Surface Temperature (Reynolds, 2007) for the `r format(getZ(oisst), "%d %B %Y")` obtained from the National Oceanic and Atmospheric Administration (NOAA). 
+The `oisst` data set is a subset the NOAA 1/4° daily Optimum Interpolation Sea Surface Temperature (Reynolds, 2007) obtained from the National Oceanic and Atmospheric Administration (NOAA). 
 
 ```{r}
-library(raster)
 library(palr)
 data(oisst)
-plot(oisst)
+image(oisst)
 ```
 
-The default plot colours uses a setting provided by the raster package, but we have SST data in degrees Celsius so we can use the `sstPal` function to give specific colours for particular temperatures. The full range of the temperatures is shown on the plot legend, even though our data only has values in the range `r format(cellStats(oisst, range), digits = 2)`. 
+The default plot colours uses a setting provided by the base package, but we have SST data in degrees Celsius so we can use the `sst_pal` function to give specific colours for particular temperatures. The full range of the temperatures is shown on the plot legend, even though our data only has values in the range `r format(range(oisst), digits = 2)`. 
 
 ```{r}
 sstcols <- sst_pal(palette = TRUE)
-plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
+image(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 ```
 
 Because we have the palette colours and data in an absolute palette we can also plot other data correctly to scale. 
 
-Create a aggregated version of the SST data set and turn it into polygons. 
-
-```{r}
-smsst <- focal(aggregate(oisst, fact = 5, fun = mean), matrix(1, 3), fun = median, na.rm = FALSE)
-psst <- rasterToPolygons(smsst, na.rm = FALSE)
-layout(matrix(1:2, ncol = 2))
-plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
-plot(oisst, col = "transparent", legend = FALSE)## plot twice to get exact alignment
-plot(psst, col = sst_pal(psst$layer), add = TRUE)
-temps <- rev(c(0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20))
-op <- par(xpd = NA); legend("right", legend = temps, fill = sst_pal(temps), inset = -0.2, cex = 0.65)
-par(op)
-```
 
 ## Bake those colours
 
@@ -86,42 +71,11 @@ cols <- image_pal(vals, zlim = c(130, max(volcano)))
 plot(vals, col = cols); abline(h = 130)
 ```
 
-There are analogous worker functions for packages raster and stars, so we can emulate a given plot effect and save it as a data object, this can be easily written out to image format such at GeoTIFF or PNG. 
+There are analogous worker functions `image_raster()` and `image_stars()` for packages raster and stars, so we can emulate a given plot effect and save it as a data object, this can be easily written out to image format such at GeoTIFF or PNG. 
 
-
-```{r image_raster}
-library(raster)
-r <- raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule", mustWork = TRUE) )
-icp <- ice_pal(palette = TRUE)
-## The AMSR colours
-plot(r, col = icp$col, zlim = range(icp$breaks))
-im <- image_raster(r, col = icp$col, zlim = range(icp$breaks))
-plotRGB(im)
-
-print(im)
-```
-
-The same for stars. 
-
-```{r image_stars}
-library(stars)
-sm <- image_stars(stars::st_as_stars(r), col = icp$col, zlim = range(icp$breaks))
-plot(sm, rgb = 1:3)
-
-print(sm)
-
-```
 
 ## References
 
 Reynolds, R. W., T. M. Smith, C. Liu, D. B. Chelton, K. S. Casey, and M. G. Schlax, 2007: Daily high-resolution-blended analyses for sea surface temperature. Journal of Climate, 20, 5473–5496.
 
-## Appendix: notes on data sets
-
-Full ncdump metadata from the data sets can be obtained with the following. 
-
-```{r}
-metadata(oisst)$filename
-writeLines(metadata(oisst)$ncdump)
-```
 
