@@ -1,7 +1,7 @@
 ## ------------------------------------------------------------------------
 maxrange <- c(0.01, 10)
 library(palr)
-pal <- chlPal(palette = TRUE)
+pal <- chl_pal(palette = TRUE)
 
 sb <- which(pal$breaks >= maxrange[1] & pal$breaks <= maxrange[2])
 
