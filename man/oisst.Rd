@@ -5,21 +5,20 @@
 \alias{oisst}
 \title{Sea surface temperature (SST).}
 \description{
-SST example raster data set, at 0.25 degree resolution for global coverage 
+SST example raster data set, at 0.25 degree resolution for global coverage
 in "longitude180/latitude".
 }
 \details{
 Created using script in data-raw/ using `raadtools` package.
 }
 \examples{
-library(raster)
-oisst
+dim(oisst)
 class(oisst)
-writeLines(unlist(metadata(oisst)))
+image(oisst, useRaster = TRUE)
 }
 \references{
-Reynolds, et al.(2007) Daily High-resolution Blended Analyses. Available at 
-ftp://eclipse.ncdc.noaa.gov/pub/OI-daily/daily-sst.pdf.   
-Climatology is based on 1971-2000 OI.v2 SST, Satellite data: Navy  NOAA19 
+Reynolds, et al.(2007) Daily High-resolution Blended Analyses. Available at
+ftp://eclipse.ncdc.noaa.gov/pub/OI-daily/daily-sst.pdf.
+Climatology is based on 1971-2000 OI.v2 SST, Satellite data: Navy  NOAA19
 METOP AVHRR, Ice data: #' NCEP ice Source: NOAA/National Climatic Data Center.
 }

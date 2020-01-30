@@ -326,10 +326,9 @@ icePal <- function(x, palette = FALSE, alpha = 1, ...) {
 #' @return colours, palette, or function, see Details
 #' @export
 #' @examples
-#' library(raster)
 #' data(oisst)
 #' sstcols <- sst_pal(palette = TRUE)
-#' plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
+#' image(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 sst_pal <- function(x, palette = FALSE, alpha = 1, ...) {
   ##pal <- read.table("http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt", header = TRUE, colClasses = "integer", comment.char = "")
   ##cols <- rgb(pal[,2], pal[,3], pal[,4], maxColorValue = 255)

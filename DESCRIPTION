@@ -2,7 +2,7 @@ Package: palr
 Type: Package
 Title: Colour Palettes for Data
 LazyData: yes
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
   person("Michael D.","Sumner", 
   role = c("aut", "cre"), 
@@ -18,16 +18,14 @@ Depends:
     R (>= 2.10)
 Suggests:
     knitr,
-    raster,
     rmarkdown,
-    sp,
+    raster,
     testthat,
     covr,
     stars,
-    viridis,
-    graticule
+    viridis
 VignetteBuilder: knitr
 License: GPL-3
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 URL: https://github.com/AustralianAntarcticDivision/palr
 BugReports: https://github.com/AustralianAntarcticDivision/palr/issues

@@ -1,11 +1,16 @@
 ---
 title: "Colour palettes for data in palr"
 date: "`r Sys.Date()`"
-output: html_vignette
+output:
+  rmarkdown::html_vignette:
+    fig_width: 7
+    fig_height: 7
 vignette: >
   %\VignetteIndexEntry{Colour palettes}
-  %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, echo = FALSE, message = FALSE}
@@ -41,7 +46,7 @@ plot(oisst)
 The default plot colours uses a setting provided by the raster package, but we have SST data in degrees Celsius so we can use the `sstPal` function to give specific colours for particular temperatures. The full range of the temperatures is shown on the plot legend, even though our data only has values in the range `r format(cellStats(oisst, range), digits = 2)`. 
 
 ```{r}
-sstcols <- sstPal(palette = TRUE)
+sstcols <- sst_pal(palette = TRUE)
 plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 ```
 
@@ -55,10 +60,56 @@ psst <- rasterToPolygons(smsst, na.rm = FALSE)
 layout(matrix(1:2, ncol = 2))
 plot(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
 plot(oisst, col = "transparent", legend = FALSE)## plot twice to get exact alignment
-plot(psst, col = sstPal(psst$layer), add = TRUE)
+plot(psst, col = sst_pal(psst$layer), add = TRUE)
 temps <- rev(c(0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20))
-op <- par(xpd = NA); legend("right", legend = temps, fill = sstPal(temps), inset = -0.2, cex = 0.65)
+op <- par(xpd = NA); legend("right", legend = temps, fill = sst_pal(temps), inset = -0.2, cex = 0.65)
 par(op)
+```
+
+## Bake those colours
+
+The function `image_pal()` can be used to *bake* a particular colour scheme into data. This is a bit like the colourvalues package function `colour_values()`, which takes raw values and maps them to a colour scale but is modelled on the `image()` function. The image function takes a set of colours and a set of `breaks to define the colour scale, and `image_pal()` mirrors its defaults. 
+
+```{r image_pal}
+(col <- image_pal(1:10, breaks = c(0, 4, 8, 9, 10), col = c("black", "green", "red", "blue")))
+plot(1:10, col = col, pch = 19)
+```
+
+By using breaks we are able to  control the actual scale of the colour mapping, we can provide different data values but still get the same colour for the same value input (if we set up the scale based on the original data we might have the wrong range). 
+
+There's a simpler interface for using absolute colours than specifying every break, by using `zlim`. This value is ignored if `breaks` is set. 
+
+```{r image}
+image(volcano, zlim = c(130, max(volcano)))
+vals <- sort(unique(volcano))
+cols <- image_pal(vals, zlim = c(130, max(volcano)))
+plot(vals, col = cols); abline(h = 130)
+```
+
+There are analogous worker functions for packages raster and stars, so we can emulate a given plot effect and save it as a data object, this can be easily written out to image format such at GeoTIFF or PNG. 
+
+
+```{r image_raster}
+library(raster)
+r <- raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule", mustWork = TRUE) )
+icp <- ice_pal(palette = TRUE)
+## The AMSR colours
+plot(r, col = icp$col, zlim = range(icp$breaks))
+im <- image_raster(r, col = icp$col, zlim = range(icp$breaks))
+plotRGB(im)
+
+print(im)
+```
+
+The same for stars. 
+
+```{r image_stars}
+library(stars)
+sm <- image_stars(stars::st_as_stars(r), col = icp$col, zlim = range(icp$breaks))
+plot(sm, rgb = 1:3)
+
+print(sm)
+
 ```
 
 ## References

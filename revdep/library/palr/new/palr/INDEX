@@ -2,7 +2,7 @@ bathy_deep_pal          Bathymetry
 chl_pal                 Ocean colour colours for chlorophyll-a.
 col2hex                 Colour to hex conversion.
 ice_pal                 Sea ice colours
-image_pal               Raster data to RGB
+image_pal               Map data values to colours
 mk_timePal              Time-indexed colour.
 oisst                   Sea surface temperature (SST).
 palr                    palr: colours for data
