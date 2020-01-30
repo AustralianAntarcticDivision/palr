@@ -16,6 +16,7 @@ Description: Colour palettes for data, based on some well known public data
     capture the work of image colour mapping as raster data sets. 
 Depends:
     R (>= 2.10)
+Imports: grDevices
 Suggests:
     knitr,
     rmarkdown,
