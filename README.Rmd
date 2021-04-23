@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 [![codecov](https://codecov.io/gh/AustralianAntarcticDivision/palr/branch/master/graph/badge.svg)](https://codecov.io/gh/AustralianAntarcticDivision/palr)
 [![CRAN status](https://www.r-pkg.org/badges/version/palr)](https://CRAN.R-project.org/package=palr)
 [![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/silicate)](https://cran.r-project.org/package=silicate)
+[![R-CMD-check](https://github.com/AustralianAntarcticDivision/palr/workflows/R-CMD-check/badge.svg)](https://github.com/AustralianAntarcticDivision/palr/actions)
 <!-- badges: end -->
 
 # palr

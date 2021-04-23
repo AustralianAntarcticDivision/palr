@@ -1,3 +1,7 @@
+# palr  0.3.0
+
+* Removed ftp links thanks to CRAN. 
+
 # palr  0.2.0
 
 * Remove need for sp package by converting example data to a matrix. 

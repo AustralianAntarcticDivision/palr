@@ -1,3 +1,5 @@
+#' palr
+#'
 #' palr: colours for data
 #'
 #' @docType package
@@ -14,8 +16,9 @@ NULL
 #'
 #' Created using script in data-raw/ using `raadtools` package.
 #' @references
-#' Reynolds, et al.(2007) Daily High-resolution Blended Analyses. Available at
-#' ftp://eclipse.ncdc.noaa.gov/pub/OI-daily/daily-sst.pdf.
+#' Reynolds, et al.(2007) Daily High-resolution Blended Analyses. Available from
+#' 'NOAA' search for 'OISST'.
+#'
 #' Climatology is based on 1971-2000 OI.v2 SST, Satellite data: Navy  NOAA19
 #' METOP AVHRR, Ice data: #' NCEP ice Source: NOAA/National Climatic Data Center.
 #'

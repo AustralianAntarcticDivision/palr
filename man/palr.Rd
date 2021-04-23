@@ -3,7 +3,7 @@
 \docType{package}
 \name{palr}
 \alias{palr}
-\title{palr: colours for data}
+\title{palr}
 \description{
 palr: colours for data
 }

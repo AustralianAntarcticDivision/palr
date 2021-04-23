@@ -1,10 +1,9 @@
-## palr 0.2.0
+## palr 0.3.0
 
-Thank you very much. 
+Removed ftp link for CRAN checks, thank you very much. 
 
 ## Test environments
-* local ubuntu install, R 3.6.2
-* ubuntu 14.04 (on travis-ci), R 3.6.2
+* local ubuntu install, R 4.0.4
 * win-builder (devel)
 
 ## R CMD check results
@@ -14,3 +13,9 @@ Thank you very much.
 ## Reverse dependencies
 
 The three reverse dependencies pass check with this version. 
+
+
+* quadmesh
+* lazyraster
+* paleteer
+
