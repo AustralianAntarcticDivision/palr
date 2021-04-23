@@ -1,0 +1,8 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  nasa_chla: nasa_chla.html
+  palr: palr.html
+last_built: 2021-04-23T04:54Z
+
