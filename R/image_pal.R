@@ -24,6 +24,7 @@
 #' @export
 #' @aliases image_raster image_stars
 #' @export
+#' @importFrom grDevices hcl.colors
 #' @examples
 #' set.seed(28)
 #' vals <- sort(rnorm(100))
