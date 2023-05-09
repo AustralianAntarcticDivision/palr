@@ -13,12 +13,8 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/AustralianAntarcticDivision/palr.svg?branch=master)](https://travis-ci.org/AustralianAntarcticDivision/palr)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/AustralianAntarcticDivision/palr?branch=master&svg=true)](https://ci.appveyor.com/project/AustralianAntarcticDivision/palr)
-[![codecov](https://codecov.io/gh/AustralianAntarcticDivision/palr/branch/master/graph/badge.svg)](https://codecov.io/gh/AustralianAntarcticDivision/palr)
 [![CRAN status](https://www.r-pkg.org/badges/version/palr)](https://CRAN.R-project.org/package=palr)
-[![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/silicate)](https://cran.r-project.org/package=silicate)
-[![R-CMD-check](https://github.com/AustralianAntarcticDivision/palr/workflows/R-CMD-check/badge.svg)](https://github.com/AustralianAntarcticDivision/palr/actions)
+[![R-CMD-check](https://github.com/AustralianAntarcticDivision/palr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AustralianAntarcticDivision/palr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # palr
@@ -34,9 +30,10 @@ There are five main ways of working with palr palette functions, which have name
 * `tfun <- mk_timePal(datetimes, pal); plot(x, tfun(dt))` match date-times to a palette, or palette function. 
 * `image_pal(data, col = colors, breaks = breaks)` emulates the behaviour of `image()` but return
 colours as data rather than draw a plot
+* `d_pal(data)` returns a colour for a set of values
 
 
-See the website for documentation: http://australianantarcticdivision.github.io/palr/
+See the website for documentation: https://australianantarcticdivision.github.io/palr/
 
 ## Installation
 

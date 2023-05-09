@@ -2,7 +2,7 @@ Package: palr
 Type: Package
 Title: Colour Palettes for Data
 LazyData: yes
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: c(
   person("Michael D.","Sumner", 
   role = c("aut", "cre"), 

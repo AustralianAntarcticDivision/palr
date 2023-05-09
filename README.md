@@ -1,16 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
 <!-- badges: start -->
 
-[![Travis build
-status](https://travis-ci.org/AustralianAntarcticDivision/palr.svg?branch=master)](https://travis-ci.org/AustralianAntarcticDivision/palr)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/AustralianAntarcticDivision/palr?branch=master&svg=true)](https://ci.appveyor.com/project/AustralianAntarcticDivision/palr)
-[![codecov](https://codecov.io/gh/AustralianAntarcticDivision/palr/branch/master/graph/badge.svg)](https://codecov.io/gh/AustralianAntarcticDivision/palr)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/palr)](https://CRAN.R-project.org/package=palr)
-[![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/silicate)](https://cran.r-project.org/package=silicate)
+[![R-CMD-check](https://github.com/AustralianAntarcticDivision/palr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AustralianAntarcticDivision/palr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # palr
@@ -25,15 +19,15 @@ have names like `ice_pal()`, `chl_pal()` and `sst_pal()` for ice,
 chlorophyll-a and sst respectively and `mk_timePal` for creating a
 time-mapped palette function.
 
-  - `ice_pal(n)` return n colours from the palette
-  - `ice_pal(data)` return the right colour for values in `data`
-  - `ice_pal(palette = TRUE)` returns the entire palette, with colours
-    `cols` and intervals `breaks`
-  - `tfun <- mk_timePal(datetimes, pal); plot(x, tfun(dt))` match
-    date-times to a palette, or palette function.
-  - `image_pal(data, col = colors, breaks = breaks)` emulates the
-    behaviour of `image()` but return colours as data rather than draw a
-    plot
+- `ice_pal(n)` return n colours from the palette
+- `ice_pal(data)` return the right colour for values in `data`
+- `ice_pal(palette = TRUE)` returns the entire palette, with colours
+  `cols` and intervals `breaks`
+- `tfun <- mk_timePal(datetimes, pal); plot(x, tfun(dt))` match
+  date-times to a palette, or palette function.
+- `image_pal(data, col = colors, breaks = breaks)` emulates the
+  behaviour of `image()` but return colours as data rather than draw a
+  plot
 
 See the website for documentation:
 <http://australianantarcticdivision.github.io/palr/>
@@ -53,7 +47,7 @@ library(devtools)
 install_github("AustralianAntarcticDivision/palr")
 ```
 
------
+------------------------------------------------------------------------
 
 Please note that the palr project is released with a [Contributor Code
 of

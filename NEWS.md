@@ -1,3 +1,6 @@
+# palr 0.4.0
+
+
 # palr  0.3.0
 
 * New function `d_pal()` and alias `data_pal()` to colour data values (like {colourvalues} but
