@@ -1,5 +1,5 @@
 ---
-title: "Colour palettes for data in palr"
+title: "Colour palettes"
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
