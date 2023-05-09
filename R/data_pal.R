@@ -26,8 +26,21 @@ d_pal <- function(x, pal = hcl.colors(84)) {
   if (is.factor(x)) {
     x <- as.integer(x)
   }
-  x <- x[!is.na(x)]
-  xx <- (x  - min(x)) / diff(range(x))
+  bad <- is.na(x)
+  if (length(x[!bad]) < 1) {
+    message("no valid values in 'x'")
+    return(rep(NA_character_, length(x)))
+  }
+  if (length(x) == 1) {
+    if (is.na(x)) return(NA_character_)
+    return(pal[1L])
+  }
+  if (sum(!bad) == 1) {
+    out <- rep(pal[1], length(x))
+    out[bad] <- NA
+    return(out)
+  }
+  xx <- (x  - min(x, na.rm = TRUE)) / diff(range(x, na.rm = TRUE))
   pal[xx * (length(pal) - 1) + 1]
 }
 
