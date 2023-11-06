@@ -1,6 +1,8 @@
 # palr 0.4.0
 
+* `ice_pal()` now defaults to the more pleasing NSIDC blue palette (use `amsre = TRUE` to get the old behavour).
 
+* Fixed a problem with missing values in `d_pal()`. 
 # palr  0.3.0
 
 * New function `d_pal()` and alias `data_pal()` to colour data values (like {colourvalues} but

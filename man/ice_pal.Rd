@@ -5,7 +5,7 @@
 \alias{icePal}
 \title{Sea ice colours}
 \usage{
-ice_pal(x, palette = FALSE, alpha = 1, ...)
+ice_pal(x, palette = FALSE, alpha = 1, ..., amsre = FALSE)
 
 icePal(x, palette = FALSE, alpha = 1, ...)
 }
@@ -17,6 +17,8 @@ icePal(x, palette = FALSE, alpha = 1, ...)
 \item{alpha}{value in 0,1 to specify opacity}
 
 \item{...}{currently ignored}
+
+\item{amsre}{use old AMSRE colours (`FALSE` by default)}
 }
 \value{
 colours, palette, or function, see Details
@@ -41,5 +43,6 @@ main = sprintf("NSIDC ice \\\\\% \%s", format(getZ(r))))
 }
 }
 \references{
-Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
+amsre colours derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.,
+ nsidc colours extracted in data-raw/.
 }

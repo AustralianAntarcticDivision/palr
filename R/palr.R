@@ -276,7 +276,9 @@ col2hex <- function(x, alpha = 1) {
 #' @param palette logical, if \code{TRUE} return a list with matching colours and values
 #' @param alpha value in 0,1 to specify opacity
 #' @param ... currently ignored
-#' @references Derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.
+#' @param amsre use old AMSRE colours (`FALSE` by default)
+#' @references amsre colours derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.,
+#'  nsidc colours extracted in data-raw/.
 #' @return colours, palette, or function, see Details
 #' @export
 #' @examples
@@ -288,9 +290,9 @@ col2hex <- function(x, alpha = 1) {
 #' plot(r, col = icp$col, zlim = range(icp$breaks),
 #' main = sprintf("NSIDC ice \\% %s", format(getZ(r))))
 #' }
-ice_pal <- function(x, palette = FALSE, alpha = 1, ...) {
+ice_pal <- function(x, palette = FALSE, alpha = 1, ..., amsre = FALSE) {
 
-  cols <- head(.amsrecols(), 201)
+  if (amsre) cols <- head(.amsrecols(), 201) else cols <- .nsidc_colours
  breaks <- seq(0, 100, length = length(cols))
  hexalpha <- as.hexmode(round(255 * alpha))
   if (nchar(hexalpha) == 1L) hexalpha <- paste(rep(hexalpha, 2L), collapse = "")
