@@ -1,3 +1,7 @@
+# palr dev
+
+* New function dirty_pal() for global bathymetry. 
+
 # palr 0.4.0
 
 * `ice_pal()` now defaults to the more pleasing NSIDC blue palette (use `amsre = TRUE` to get the old behavour).
