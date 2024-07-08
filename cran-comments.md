@@ -1,10 +1,12 @@
-## palr 0.3.0
+## palr 0.4.0
 
-Removed ftp link for CRAN checks, thank you very much. 
+Fixed namespace documentation thanks to CRAN. 
 
 ## Test environments
-* local ubuntu install, R 4.0.5
+
+* local ubuntu install
 * win-builder (devel)
+* mac-builder
 
 ## R CMD check results
 
@@ -12,10 +14,9 @@ Removed ftp link for CRAN checks, thank you very much.
 
 ## Reverse dependencies
 
-The three reverse dependencies pass check with this version. 
+The  reverse dependencies pass check with this version. 
 
 
 * quadmesh
-* lazyraster
 * paletteer
 

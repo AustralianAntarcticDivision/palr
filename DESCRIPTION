@@ -27,6 +27,6 @@ Suggests:
     viridis
 VignetteBuilder: knitr
 License: GPL-3
-RoxygenNote: 7.1.1
-URL: https://github.com/AustralianAntarcticDivision/palr
+RoxygenNote: 7.2.3
+URL: https://australianantarcticdivision.github.io/palr/, https://github.com/AustralianAntarcticDivision/palr
 BugReports: https://github.com/AustralianAntarcticDivision/palr/issues

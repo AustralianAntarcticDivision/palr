@@ -46,33 +46,8 @@ other situations, for controlling exactly the kind of plots we can achieve and f
 to image formats such as 'GeoTIFF' or 'PNG'.
 }
 \examples{
-set.seed(28)
 vals <- sort(rnorm(100))
-cols <- image_pal(vals, zlim = c(-2.4, 2))
-plot(vals, col = cols); abline(h = 2)
-points(vals, pch  = 19, cex = 0.1) ## zlim excluded some of the range
-if (requireNamespace("raster", quietly = TRUE)) {
-im <- image_raster(volcano)
-library(raster)
-plotRGB(im)
-\donttest{
-vv <- unique(quantile(volcano, seq(0, 1, length = 12)))
-plotRGB(image_raster(volcano, breaks = vv))
-plotRGB(image_raster(volcano, breaks = vv[-c(4, 6)], col = gray.colors(9)))
-plotRGB(image_raster(volcano, n = 4))
-plotRGB(image_raster(volcano, col = grey(seq(0.2, 0.8, by = 0.1))))
-
-plotRGB(image_raster(volcano, col = viridis::magma(24)))
-}
-}
-if (!requireNamespace("stars", quietly = TRUE)) {
-library(stars)
-x <- st_as_stars(volcano)
-plot(image_stars(x), rgb = 1:3)
-\donttest{
-plot(image_stars(x, col = gray.colors), rgb = 1:3)
-plot(image_stars(x))
-plot(image_stars(x, col = rainbow, breaks = c(94, 100, 120, 150, 195)), rgb = 1:3)
-}
-}
+cols <- image_pal(vals, zlim = c(-2.4, .5))
+plot(vals, col = cols); abline(h = .5)
+points(vals, pch  = ".") ## zlim excluded some of the range
 }
