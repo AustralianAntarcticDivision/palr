@@ -51,14 +51,17 @@ nsidc colours extracted in data-raw/.
 ## Examples
 
 ``` r
+# \donttest{
 if (requireNamespace("raster")) {
-r <- raster::raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule") )
+nsidcfile <- system.file("extdata", "nt_20140320_f17_v01_s.bin", 
+    package = "palr", mustWork = TRUE)
+r <- raster::raster(nsidcfile) 
 icp <- ice_pal(palette = TRUE)
 ## The AMSR colours
 raster::plot(r, col = icp$col, zlim = range(icp$breaks),
-main = sprintf("NSIDC ice \\% %s", format(getZ(r))))
+main = sprintf("NSIDC ice %s", format(raster::getZ(r))))
 }
 #> Loading required namespace: raster
-#> Warning: `/home/runner/work/palr/palr/docs/reference' not recognized as a supported file format. (GDAL error 4)
-#> Error in .rasterObjectFromFile(x, band = band, objecttype = "RasterLayer",     ...): Cannot create a RasterLayer object from this file.
+
+# }
 ```
