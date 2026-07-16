@@ -228,7 +228,7 @@ structure(list(V1 = c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)), .Names = c("V1",
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)), names = c("V1",
 "V2", "V3"), class = "data.frame", row.names = c(NA, -500L))
 
 }
@@ -334,7 +334,7 @@ col2hex <- function(x, alpha = 1) {
 #' @param alpha value in 0,1 to specify opacity
 #' @param ... currently ignored
 #' @param amsre use old AMSRE colours (`FALSE` by default)
-#' @references amsre colours derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.,
+#' @references amsre colours derived from 'http://www.iup.uni-bremen.de/seaice/amsr/'.,
 #'  nsidc colours extracted in data-raw/.
 #' @return colours, palette, or function, see Details
 #' @export

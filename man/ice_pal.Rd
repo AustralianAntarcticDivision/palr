@@ -43,6 +43,6 @@ main = sprintf("NSIDC ice \\\\\% \%s", format(getZ(r))))
 }
 }
 \references{
-amsre colours derived from \url{http://www.iup.uni-bremen.de/seaice/amsr/}.,
+amsre colours derived from 'http://www.iup.uni-bremen.de/seaice/amsr/'.,
  nsidc colours extracted in data-raw/.
 }
