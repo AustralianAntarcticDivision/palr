@@ -2,7 +2,7 @@ Package: palr
 Type: Package
 Title: Colour Palettes for Data
 LazyData: yes
-Version: 0.4.0
+Version: 0.4.0.9001
 Authors@R: c(
   person("Michael D.","Sumner", 
   role = c("aut", "cre"), 
@@ -27,6 +27,7 @@ Suggests:
     viridis
 VignetteBuilder: knitr
 License: GPL-3
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3
 URL: https://australianantarcticdivision.github.io/palr/, https://github.com/AustralianAntarcticDivision/palr
 BugReports: https://github.com/AustralianAntarcticDivision/palr/issues
+Encoding: UTF-8

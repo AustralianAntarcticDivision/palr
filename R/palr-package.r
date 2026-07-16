@@ -2,12 +2,10 @@
 #'
 #' palr: colours for data
 #'
-#' @docType package
 #' @name palr
 #' @importFrom grDevices col2rgb colorRampPalette rgb
 #' @importFrom utils  head
-
-NULL
+"_PACKAGE"
 
 #' Sea surface temperature (SST).
 #'

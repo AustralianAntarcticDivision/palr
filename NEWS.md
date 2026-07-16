@@ -1,5 +1,7 @@
 # palr dev
 
+* New stretch functions based on experience with Sentinel 2. 
+
 * New function dirty_pal() for global bathymetry. 
 
 # palr 0.4.0
