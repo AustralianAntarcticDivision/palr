@@ -1,0 +1,142 @@
+# palr
+
+`palr` provides colour palettes for data, based on some well known
+remotely sensed data sets for sea ice concentration, sea surface
+temperature and chlorophyll-a. It includes function
+[`image_pal()`](https://australianantarcticdivision.github.io/palr/reference/image_pal.md)
+to create the data used by the
+[`image()`](https://rdrr.io/r/graphics/image.html) function *as
+colours*.
+
+There are five main ways of working with palr palette functions, which
+have names like
+[`ice_pal()`](https://australianantarcticdivision.github.io/palr/reference/ice_pal.md),
+[`chl_pal()`](https://australianantarcticdivision.github.io/palr/reference/chl_pal.md)
+and
+[`sst_pal()`](https://australianantarcticdivision.github.io/palr/reference/sst_pal.md)
+for ice, chlorophyll-a and sst respectively and `mk_timePal` for
+creating a time-mapped palette function.
+
+- `ice_pal(n)` return n colours from the palette
+- `ice_pal(data)` return the right colour for values in `data`
+- `ice_pal(palette = TRUE)` returns the entire palette, with colours
+  `cols` and intervals `breaks`
+- `tfun <- mk_timePal(datetimes, pal); plot(x, tfun(dt))` match
+  date-times to a palette, or palette function.
+- `image_pal(data, col = colors, breaks = breaks)` emulates the
+  behaviour of [`image()`](https://rdrr.io/r/graphics/image.html) but
+  return colours as data rather than draw a plot
+- `d_pal(data)` returns a colour for a set of values
+
+See the website for documentation:
+<https://australianantarcticdivision.github.io/palr/>
+
+## Installation
+
+Install the current release from CRAN using
+
+``` r
+
+install.packages("palr")
+```
+
+To install the development version:
+
+``` r
+
+library(devtools)
+install_github("AustralianAntarcticDivision/palr")
+```
+
+------------------------------------------------------------------------
+
+Please note that the palr project is released with a [Contributor Code
+of
+Conduct](https://github.com/AustralianAntarcticDivision/palr/blob/master/CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
+
+# Package index
+
+## Absolute palettes
+
+Colour palettes matched to real data values on a fixed scale, for sea
+surface temperature, chlorophyll-a, sea ice concentration, and
+bathymetry. Each works in three modes, n colours with pal(n), colours
+for data values with pal(data), and the full palette with pal(palette =
+TRUE).
+
+- [`sst_pal()`](https://australianantarcticdivision.github.io/palr/reference/sst_pal.md)
+  [`sstPal()`](https://australianantarcticdivision.github.io/palr/reference/sst_pal.md)
+  : SST colours
+- [`chl_pal()`](https://australianantarcticdivision.github.io/palr/reference/chl_pal.md)
+  [`chlPal()`](https://australianantarcticdivision.github.io/palr/reference/chl_pal.md)
+  : Ocean colour colours for chlorophyll-a.
+- [`ice_pal()`](https://australianantarcticdivision.github.io/palr/reference/ice_pal.md)
+  [`icePal()`](https://australianantarcticdivision.github.io/palr/reference/ice_pal.md)
+  : Sea ice colours
+- [`bathy_deep_pal()`](https://australianantarcticdivision.github.io/palr/reference/bathy_deep_pal.md)
+  [`bathyDeepPal()`](https://australianantarcticdivision.github.io/palr/reference/bathy_deep_pal.md)
+  : Bathymetry
+- [`dirty_pal()`](https://australianantarcticdivision.github.io/palr/reference/dirty_pal.md)
+  : Bathymetry palette, absolute for global use
+
+## Data-relative colours
+
+Map values to colours by the range of the data itself, or by absolute
+date-time.
+
+- [`d_pal()`](https://australianantarcticdivision.github.io/palr/reference/d_pal.md)
+  [`data_pal()`](https://australianantarcticdivision.github.io/palr/reference/d_pal.md)
+  : Colours for data values
+- [`mk_timePal()`](https://australianantarcticdivision.github.io/palr/reference/mk_timePal.md)
+  : Time-indexed colour.
+
+## Image colour mapping
+
+Convert numeric data to hex colours the way image() does, or convert
+matrices and multi-band arrays to hex colour matrices ready for
+rasterImage(), textures, or export.
+
+- [`image_hex()`](https://australianantarcticdivision.github.io/palr/reference/image_hex.md)
+  : Convert image data to a matrix of hex colours
+- [`image_pal()`](https://australianantarcticdivision.github.io/palr/reference/image_pal.md)
+  [`image_raster()`](https://australianantarcticdivision.github.io/palr/reference/image_pal.md)
+  [`image_stars()`](https://australianantarcticdivision.github.io/palr/reference/image_pal.md)
+  : Map data values to colours
+
+## Stretching
+
+Rescale data to the unit interval ahead of colour mapping, linear
+quantile clip, log, square root, and histogram equalisation.
+
+- [`stretch_linear()`](https://australianantarcticdivision.github.io/palr/reference/stretch_linear.md)
+  [`stretch_log()`](https://australianantarcticdivision.github.io/palr/reference/stretch_linear.md)
+  [`stretch_sqrt()`](https://australianantarcticdivision.github.io/palr/reference/stretch_linear.md)
+  [`stretch_histeq()`](https://australianantarcticdivision.github.io/palr/reference/stretch_linear.md)
+  : Stretch numeric values to \[0, 1\]
+
+## Helpers
+
+- [`col2hex()`](https://australianantarcticdivision.github.io/palr/reference/col2hex.md)
+  : Colour to hex conversion.
+
+## Data
+
+- [`oisst`](https://australianantarcticdivision.github.io/palr/reference/oisst.md)
+  [`chl`](https://australianantarcticdivision.github.io/palr/reference/oisst.md)
+  : Sea surface temperature (SST) and ocean color chlorophyll-a (CHLA).
+
+## Package
+
+- [`palr-package`](https://australianantarcticdivision.github.io/palr/reference/palr.md)
+  [`palr`](https://australianantarcticdivision.github.io/palr/reference/palr.md)
+  : palr
+
+# Articles
+
+### All vignettes
+
+- [Chlorophyll-a colour scale: the SeaWiFS
+  palette](https://australianantarcticdivision.github.io/palr/articles/nasa_chla.md):
+- [Colour
+  palettes](https://australianantarcticdivision.github.io/palr/articles/palr.md):
