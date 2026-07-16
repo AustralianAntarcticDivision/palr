@@ -47,14 +47,6 @@ dirty_pal <- function(x, palette = FALSE, alpha = 1) {
   abs_pal(x, palette = palette, alpha = alpha, breaks = d$breaks, cols = d$cols)
 }
 
-#' Convert list of raster output to bathymetry palette
-#'
-#' @param x object returned by vapour package 'gdal_raster_data()'
-#' @param alpha 0 to 1 for transparency
-#'
-#' @return modified x
-#' @export
-#'
 dirty_image <- function(x, alpha = 1) {
   x[[1]] <- dirty_pal(x[[1]], alpha = alpha)
   x

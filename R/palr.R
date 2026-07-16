@@ -339,12 +339,11 @@ col2hex <- function(x, alpha = 1) {
 #' @return colours, palette, or function, see Details
 #' @export
 #' @examples
-#' \dontrun{
-#' library(raster)
-#' r <- raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule") )
+#' if (requireNamespace("raster")) {
+#' r <- raster::raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule") )
 #' icp <- ice_pal(palette = TRUE)
 #' ## The AMSR colours
-#' plot(r, col = icp$col, zlim = range(icp$breaks),
+#' raster::plot(r, col = icp$col, zlim = range(icp$breaks),
 #' main = sprintf("NSIDC ice \\% %s", format(getZ(r))))
 #' }
 ice_pal <- function(x, palette = FALSE, alpha = 1, ..., amsre = FALSE) {
@@ -464,22 +463,12 @@ sstPal <- function(x, palette = FALSE, alpha = 1, ...) {
 #' @return colours, palette, or function, see Details
 #' @export
 #' @examples
-#' \dontrun{
-#' chl <- raadtools::readchla(xylim = c(100, 110, -50, -40))
 #' ## just get a small number of evenly space colours
-#' plot(chl, col = chl_pal(10))
+#' plot(1:10, col = chl_pal(10))
 #' ## store the full palette and work with values and colours
-#' pal <- chl_pal()
+#' pal <- chl_pal(palette = TRUE)
 #' ## the standard full palette
-#' plot(chl, breaks = pal$breaks, col = pal$cols)
-#' ## a custom set of values with matching colours
-#' plot(chl, col = chl_pal(pal$breaks[seq(1, length(pal$breaks), length = 10)]))
-#' ## any number of colours stored as a function
-#' myfun <- chl_pal()
-#' plot(chl, col = myfun(18))
-#' ## just n colours
-#' plot(chl, col = chl_pal(18))
-#' }
+#' image(chl, breaks = pal$breaks, col = pal$cols[-1])
 chl_pal <- function(x, palette = FALSE, alpha = 1) {
 
   ##pal <- read.table("http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt", header = TRUE, colClasses = "integer", comment.char = "")

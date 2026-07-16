@@ -1,0 +1,55 @@
+url: https://australianantarcticdivision.github.io/palr/
+
+template:
+  bootstrap: 5
+
+reference:
+- title: Absolute palettes
+  desc: >
+    Colour palettes matched to real data values on a fixed scale, for sea
+    surface temperature, chlorophyll-a, sea ice concentration, and
+    bathymetry. Each works in three modes, n colours with pal(n), colours
+    for data values with pal(data), and the full palette with
+    pal(palette = TRUE).
+  contents:
+  - sst_pal
+  - chl_pal
+  - ice_pal
+  - bathy_deep_pal
+  - dirty_pal
+
+- title: Data-relative colours
+  desc: >
+    Map values to colours by the range of the data itself, or by absolute
+    date-time.
+  contents:
+  - d_pal
+  - mk_timePal
+
+- title: Image colour mapping
+  desc: >
+    Convert numeric data to hex colours the way image() does, or convert
+    matrices and multi-band arrays to hex colour matrices ready for
+    rasterImage(), textures, or export.
+  contents:
+  - image_hex
+  - image_pal
+
+- title: Stretching
+  desc: >
+    Rescale data to the unit interval ahead of colour mapping, linear
+    quantile clip, log, square root, and histogram equalisation.
+  contents:
+  - starts_with("stretch_")
+
+- title: Helpers
+  contents:
+  - col2hex
+
+- title: Data
+  contents:
+  - oisst
+
+- title: Package
+  contents:
+  - palr

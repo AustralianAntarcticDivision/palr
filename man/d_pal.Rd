@@ -14,6 +14,9 @@ data_pal(x, pal = hcl.colors(84))
 
 \item{pal}{palette, may be colours or a function}
 }
+\value{
+character string of hex colours
+}
 \description{
 Scales input data to the palette, so that colour is mapped linearly to the range of values.
 }

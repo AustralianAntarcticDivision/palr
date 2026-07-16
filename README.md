@@ -1,5 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 <!-- badges: start -->
 
 [![CRAN
@@ -28,9 +29,10 @@ time-mapped palette function.
 - `image_pal(data, col = colors, breaks = breaks)` emulates the
   behaviour of `image()` but return colours as data rather than draw a
   plot
+- `d_pal(data)` returns a colour for a set of values
 
 See the website for documentation:
-<http://australianantarcticdivision.github.io/palr/>
+<https://australianantarcticdivision.github.io/palr/>
 
 ## Installation
 

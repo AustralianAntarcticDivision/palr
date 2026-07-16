@@ -22,8 +22,7 @@
  bounds via `lim` for scene-independent stretches.
 
 * New function `dirty_pal()` for global bathymetry/topography (AAD underway,
- DiRT), with companion `dirty_image()` for `vapour::gdal_raster_data()`
- output. Follows the standard palr palette modes.
+ DiRT). Follows the standard palr palette modes.
 
 * `d_pal()` and `image_pal()` now map constant data to a mid-palette colour
  instead of returning NA.

@@ -10,6 +10,7 @@
 #' @param x data vector, maybe be numeric or character
 #' @param pal palette, may be colours or a function
 #'
+#' @return character string of hex colours
 #' @export
 #' @importFrom grDevices hcl.colors
 #' @examples

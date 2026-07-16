@@ -35,22 +35,12 @@ evenly spaced colours from the palette, as per
 \code{\link{colorRampPalette}}.
 }
 \examples{
-\dontrun{
-chl <- raadtools::readchla(xylim = c(100, 110, -50, -40))
 ## just get a small number of evenly space colours
-plot(chl, col = chl_pal(10))
+plot(1:10, col = chl_pal(10))
 ## store the full palette and work with values and colours
-pal <- chl_pal()
+pal <- chl_pal(palette = TRUE)
 ## the standard full palette
-plot(chl, breaks = pal$breaks, col = pal$cols)
-## a custom set of values with matching colours
-plot(chl, col = chl_pal(pal$breaks[seq(1, length(pal$breaks), length = 10)]))
-## any number of colours stored as a function
-myfun <- chl_pal()
-plot(chl, col = myfun(18))
-## just n colours
-plot(chl, col = chl_pal(18))
-}
+image(chl, breaks = pal$breaks, col = pal$cols[-1])
 }
 \references{
 Derived from a file once found at 'http://oceancolor.gsfc.nasa.gov/DOCS/palette_chl_etc.txt'
