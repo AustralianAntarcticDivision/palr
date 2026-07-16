@@ -1,0 +1,79 @@
+* using log directory ‘/perm_storage/home/mdsumner/Git/palr/revdep/checks/paletteer/new/paletteer.Rcheck’
+* using R version 4.6.1 (2026-06-24)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    x86_64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+* running under: Ubuntu 24.04.4 LTS
+* using session charset: UTF-8
+* current time: 2026-07-16 06:59:58 UTC
+* using options ‘--no-manual --no-build-vignettes’
+* checking for file ‘paletteer/DESCRIPTION’ ... OK
+* this is package ‘paletteer’ version ‘1.7.0’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘paletteer’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking whether startup messages can be suppressed ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking R/sysdata.rda ... OK
+* checking examples ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... ERROR
+  Running ‘testthat.R’
+Running the tests in ‘tests/testthat.R’ failed.
+Last 13 lines of output:
+   1. └─vdiffr::expect_doppelganger("scico", plot_in_one("scico")()) at test-vdiffr_palette_check.R:181:3
+   2.   ├─base::withCallingHandlers(...)
+   3.   └─testthat::expect_snapshot_file(...)
+  
+  ── Snapshots ───────────────────────────────────────────────────────────────────
+  To review and process snapshots locally:
+  * Locate check directory.
+  * Copy 'tests/testthat/_snaps' to local package.
+  * Run `testthat::snapshot_accept()` to accept all changes.
+  * Run `testthat::snapshot_review()` to review all changes.
+  [ FAIL 13 | WARN 2 | SKIP 3 | PASS 180 ]
+  Deleting unused snapshots: 'vdiffr_palette_check/ggthemes.svg'
+  Error:
+  ! Test failures.
+  Execution halted
+* DONE
+Status: 1 ERROR

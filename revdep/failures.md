@@ -1,46 +1,9 @@
-# paletteer
+# inDAGO ()
 
-<details>
+* GitHub: <https://github.com/AustralianAntarcticDivision/palr>
+* Email: <mailto:mdsumner@gmail.com>
 
-* Version: 
-* GitHub: https://github.com/AustralianAntarcticDivision/palr
-* Source code: NA
-* Number of recursive dependencies: 0
-
-</details>
-
-## Error before installation
-
-### Devel
-
-```
-
-
-
-
-
-
-```
-### CRAN
-
-```
-
-
-
-
-
-
-```
-# quadmesh
-
-<details>
-
-* Version: 
-* GitHub: https://github.com/AustralianAntarcticDivision/palr
-* Source code: NA
-* Number of recursive dependencies: 0
-
-</details>
+Run `revdepcheck::revdep_details(, "inDAGO")` for more info
 
 ## Error before installation
 

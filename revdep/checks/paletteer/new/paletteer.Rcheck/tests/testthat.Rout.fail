@@ -1,0 +1,185 @@
+
+R version 4.6.1 (2026-06-24) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # This file is part of the standard setup for testthat.
+> # It is recommended that you do not modify it.
+> #
+> # Where should you do additional test configuration?
+> # Learn more about the roles of various files in:
+> # * https://r-pkgs.org/testing-design.html#sec-tests-files-overview
+> # * https://testthat.r-lib.org/articles/special-files.html
+> 
+> library(testthat)
+> library(paletteer)
+> 
+> test_check("paletteer")
+Saving _problems/test-vdiffr_palette_check-138.R
+Saving _problems/test-vdiffr_palette_check-138.R
+Saving _problems/test-vdiffr_palette_check-138.R
+Saving _problems/test-vdiffr_palette_check-138.R
+Saving _problems/test-vdiffr_palette_check-138.R
+Saving _problems/test-vdiffr_palette_check-138.R
+Saving _problems/test-vdiffr_palette_check-138.R
+Saving _problems/test-vdiffr_palette_check-138.R
+NULL
+Saving _problems/test-vdiffr_palette_check-157.R
+NULL
+Saving _problems/test-vdiffr_palette_check-163.R
+NULL
+Saving _problems/test-vdiffr_palette_check-169.R
+NULL
+Saving _problems/test-vdiffr_palette_check-175.R
+NULL
+Saving _problems/test-vdiffr_palette_check-181.R
+NULL
+[ FAIL 13 | WARN 2 | SKIP 3 | PASS 180 ]
+
+══ Skipped tests (3) ═══════════════════════════════════════════════════════════
+• {ggthemes} cannot be loaded (3): 'test-paletteer_c.R:48:3',
+  'test-paletteer_c_wrappers.R:2:3', 'test-vdiffr_palette_check.R:150:3'
+
+══ Warnings ════════════════════════════════════════════════════════════════════
+── Warning ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Adding new file snapshot: 'tests/testthat/_snaps/vdiffr_palette_check/poisonfrogs.svg'
+── Warning ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Adding new file snapshot: 'tests/testthat/_snaps/vdiffr_palette_check/rdune.svg'
+
+══ Failed tests ════════════════════════════════════════════════════════════════
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:138:5'): colors show up correctly ─────
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─paletteer (local) expect_doppelganger(package, plot_in_one(package)) at test-vdiffr_palette_check.R:138:5
+ 2.   └─vdiffr::expect_doppelganger(title, fig, ...) at test-vdiffr_palette_check.R:133:3
+ 3.     ├─base::withCallingHandlers(...)
+ 4.     └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:157:3'): colors show up correctly for harrypotter ──
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─vdiffr::expect_doppelganger("harrypotter", plot_in_one("harrypotter")()) at test-vdiffr_palette_check.R:157:3
+ 2.   ├─base::withCallingHandlers(...)
+ 3.   └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:163:3'): colors show up correctly for oompaBase ──
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─vdiffr::expect_doppelganger("oompaBase", plot_in_one("oompaBase")()) at test-vdiffr_palette_check.R:163:3
+ 2.   ├─base::withCallingHandlers(...)
+ 3.   └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:169:3'): colors show up correctly for palr ──
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─vdiffr::expect_doppelganger("palr", plot_in_one("palr")()) at test-vdiffr_palette_check.R:169:3
+ 2.   ├─base::withCallingHandlers(...)
+ 3.   └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:175:3'): colors show up correctly for pals ──
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─vdiffr::expect_doppelganger("pals", plot_in_one("pals")()) at test-vdiffr_palette_check.R:175:3
+ 2.   ├─base::withCallingHandlers(...)
+ 3.   └─testthat::expect_snapshot_file(...)
+── Failure ('test-vdiffr_palette_check.R:181:3'): colors show up correctly for scico ──
+Snapshot of `testcase` has changed.
+
+Backtrace:
+    ▆
+ 1. └─vdiffr::expect_doppelganger("scico", plot_in_one("scico")()) at test-vdiffr_palette_check.R:181:3
+ 2.   ├─base::withCallingHandlers(...)
+ 3.   └─testthat::expect_snapshot_file(...)
+
+── Snapshots ───────────────────────────────────────────────────────────────────
+To review and process snapshots locally:
+* Locate check directory.
+* Copy 'tests/testthat/_snaps' to local package.
+* Run `testthat::snapshot_accept()` to accept all changes.
+* Run `testthat::snapshot_review()` to review all changes.
+[ FAIL 13 | WARN 2 | SKIP 3 | PASS 180 ]
+Deleting unused snapshots: 'vdiffr_palette_check/ggthemes.svg'
+Error:
+! Test failures.
+Execution halted
