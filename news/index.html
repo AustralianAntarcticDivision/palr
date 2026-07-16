@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">palr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
       </span>
     </div>
 
@@ -60,6 +60,17 @@
       <small>Source: <a href="https://github.com/AustralianAntarcticDivision/palr/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.0" id="palr-050">palr 0.5.0<a class="anchor" aria-label="anchor" href="#palr-050"></a></h2>
+<ul><li><p>Fixed a long-standing bug in <code><a href="../reference/sst_pal.html">sst_pal()</a></code>, <code><a href="../reference/chl_pal.html">chl_pal()</a></code>, <code><a href="../reference/ice_pal.html">ice_pal()</a></code>, and <code><a href="../reference/bathy_deep_pal.html">bathy_deep_pal()</a></code>: data values below the first palette break were silently dropped from the output (a zero index from <code><a href="https://rdrr.io/r/base/findInterval.html" class="external-link">findInterval()</a></code>), shortening the result and misaligning colours. Out of range values now clamp to the end colours and output length always matches input length.</p></li>
+<li><p>The absolute palettes now share one internal worker <code>abs_pal()</code>, unifying alpha handling and the n-colours/data/palette/function modes. The function mode (<code>pal()</code>) now respects <code>alpha</code>.</p></li>
+<li><p>New function <code><a href="../reference/image_hex.html">image_hex()</a></code> converts matrices and arrays (1-band palette, grey+alpha, RGB, RGBA, raw, logical, character) to a matrix of hex colours. This is the colour engine shared with the {ximage} package, with robust handling of missing, non-finite, and constant data.</p></li>
+<li><p>New stretch functions <code><a href="../reference/stretch_linear.html">stretch_linear()</a></code>, <code><a href="../reference/stretch_linear.html">stretch_log()</a></code>, <code><a href="../reference/stretch_linear.html">stretch_sqrt()</a></code>, and <code><a href="../reference/stretch_linear.html">stretch_histeq()</a></code> rescale data to [0, 1] ahead of colour mapping, based on experience with Sentinel-2. They preserve matrix/array dimensions, map constant input to 0.5, return NA for non-finite input, and accept absolute bounds via <code>lim</code> for scene-independent stretches.</p></li>
+<li><p>New function <code><a href="../reference/dirty_pal.html">dirty_pal()</a></code> for global bathymetry/topography (AAD underway, DiRT), with companion <code><a href="../reference/dirty_image.html">dirty_image()</a></code> for <code>vapour::gdal_raster_data()</code> output. Follows the standard palr palette modes.</p></li>
+<li><p><code><a href="../reference/d_pal.html">d_pal()</a></code> and <code><a href="../reference/image_pal.html">image_pal()</a></code> now map constant data to a mid-palette colour instead of returning NA.</p></li>
+<li><p>Tests moved to testthat edition 3, fixed a test that used the magrittr pipe without it being available.</p></li>
+<li><p>Removed unused Suggests of viridis, removed large blocks of commented-out legacy code.</p></li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.4.0" id="palr-040">palr 0.4.0<small>2023-11-06</small><a class="anchor" aria-label="anchor" href="#palr-040"></a></h2>
 <ul><li><p><code><a href="../reference/ice_pal.html">ice_pal()</a></code> now defaults to the more pleasing NSIDC blue palette (use <code>amsre = TRUE</code> to get the old behavour).</p></li>
