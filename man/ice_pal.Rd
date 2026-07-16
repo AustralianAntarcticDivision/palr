@@ -33,12 +33,16 @@ The palette functions operate in 3 modes:
 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
 }
 \examples{
+\donttest{
 if (requireNamespace("raster")) {
-r <- raster::raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule") )
+nsidcfile <- system.file("extdata", "nt_20140320_f17_v01_s.bin", 
+    package = "palr", mustWork = TRUE)
+r <- raster::raster(nsidcfile) 
 icp <- ice_pal(palette = TRUE)
 ## The AMSR colours
 raster::plot(r, col = icp$col, zlim = range(icp$breaks),
-main = sprintf("NSIDC ice \\\\\% \%s", format(getZ(r))))
+main = sprintf("NSIDC ice \%s", format(raster::getZ(r))))
+}
 }
 }
 \references{

@@ -4,3 +4,7 @@ chl <- as.matrix(raadtools::readchla(xylim = c(140, 160, -43, -40), product = "V
 #ximage::ximage(as.matrix(chl), c( 140, 160, -43, -40), col = pal$cols, breaks = pal$breaks)
 #maps::map(add = T)
 usethis::use_data(chl, overwrite = TRUE)
+
+if (requireNamespace("graticule")) {
+  file.copy(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule"), "inst/extdata/nt_20140320_f17_v01_s.bin")
+}

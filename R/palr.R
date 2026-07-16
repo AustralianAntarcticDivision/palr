@@ -339,12 +339,16 @@ col2hex <- function(x, alpha = 1) {
 #' @return colours, palette, or function, see Details
 #' @export
 #' @examples
+#' \donttest{
 #' if (requireNamespace("raster")) {
-#' r <- raster::raster(system.file("extdata", "nt_20140320_f17_v01_s.bin", package = "graticule") )
+#' nsidcfile <- system.file("extdata", "nt_20140320_f17_v01_s.bin", 
+#'     package = "palr", mustWork = TRUE)
+#' r <- raster::raster(nsidcfile) 
 #' icp <- ice_pal(palette = TRUE)
 #' ## The AMSR colours
 #' raster::plot(r, col = icp$col, zlim = range(icp$breaks),
-#' main = sprintf("NSIDC ice \\% %s", format(getZ(r))))
+#' main = sprintf("NSIDC ice %s", format(raster::getZ(r))))
+#' }
 #' }
 ice_pal <- function(x, palette = FALSE, alpha = 1, ..., amsre = FALSE) {
 
