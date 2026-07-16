@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">palr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0.9001</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Colour palettes</h1>
             
-            <h4 data-toc-skip class="date">2024-07-09</h4>
+            <h4 data-toc-skip class="date">2026-07-16</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/AustralianAntarcticDivision/palr/blob/main/vignettes/palr.Rmd" class="external-link"><code>vignettes/palr.Rmd</code></a></small>
       <div class="hidden name"><code>palr.Rmd</code></div>
@@ -121,7 +121,7 @@ from the National Oceanic and Atmospheric Administration (NOAA).</p>
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://australianantarcticdivision.github.io/palr/" class="external-link">palr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">oisst</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">oisst</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palr_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<p><img src="palr_files/figure-html/unnamed-chunk-2-1.png" class="r-plt" alt="" width="700"></p>
 <p>The default plot colours uses a setting provided by the base package,
 but we have SST data in degrees Celsius so we can use the
 <code>sst_pal</code> function to give specific colours for particular
@@ -130,7 +130,7 @@ legend, even though our data only has values in the range NA, NA.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sstcols</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sst_pal.html">sst_pal</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">oisst</span>, col <span class="op">=</span> <span class="va">sstcols</span><span class="op">$</span><span class="va">col</span>, zlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/range.html" class="external-link">range</a></span><span class="op">(</span><span class="va">sstcols</span><span class="op">$</span><span class="va">breaks</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palr_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
+<p><img src="palr_files/figure-html/unnamed-chunk-3-1.png" class="r-plt" alt="" width="700"></p>
 <p>Because we have the palette colours and data in an absolute palette
 we can also plot other data correctly to scale.</p>
 </div>
@@ -151,7 +151,7 @@ its defaults.</p>
 <span><span class="co">##  [8] "#00FF00" "#FF0000" "#0000FF"</span></span></code></pre>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, col <span class="op">=</span> <span class="va">col</span>, pch <span class="op">=</span> <span class="fl">19</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palr_files/figure-html/image_pal-1.png" width="700"></p>
+<p><img src="palr_files/figure-html/image_pal-1.png" class="r-plt" alt="" width="700"></p>
 <p>By using breaks we are able to control the actual scale of the colour
 mapping, we can provide different data values but still get the same
 colour for the same value input (if we set up the scale based on the
@@ -161,12 +161,12 @@ specifying every break, by using <code>zlim</code>. This value is
 ignored if <code>breaks</code> is set.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">volcano</span>, zlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">130</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palr_files/figure-html/image-1.png" width="700"></p>
+<p><img src="palr_files/figure-html/image-1.png" class="r-plt" alt="" width="700"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/image_pal.html">image_pal</a></span><span class="op">(</span><span class="va">vals</span>, zlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">130</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">volcano</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">vals</span>, col <span class="op">=</span> <span class="va">cols</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fl">130</span><span class="op">)</span></span></code></pre></div>
-<p><img src="palr_files/figure-html/image-2.png" width="700"></p>
+<p><img src="palr_files/figure-html/image-2.png" class="r-plt" alt="" width="700"></p>
 <p>There are analogous worker functions <code><a href="../reference/image_pal.html">image_raster()</a></code> and
 <code><a href="../reference/image_pal.html">image_stars()</a></code> for packages raster and stars, so we can
 emulate a given plot effect and save it as a data object, this can be
@@ -197,7 +197,7 @@ surface temperature. Journal of Climate, 20, 5473–5496.</p>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
       </footer>
