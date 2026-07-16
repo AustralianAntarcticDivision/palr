@@ -27,7 +27,7 @@ SST colours
 \examples{
 data(oisst)
 sstcols <- sst_pal(palette = TRUE)
-image(oisst, col = sstcols$col, zlim = range(sstcols$breaks))
+image(oisst, col = sstcols$cols, zlim = range(sstcols$breaks))
 }
 \references{
 Derived from a file once found at 'http://oceancolor.gsfc.nasa.gov/DOCS/palette_sst.txt'

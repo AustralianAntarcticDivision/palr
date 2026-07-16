@@ -7,7 +7,7 @@
 #' Colour ramp suitable for deep waters (-5500) to sea level.
 #' The palette functions operate in 3 modes:
 #' 1) n colours - Pal(6) - returns 6 colours from the palette
-#' 2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
+#' 2) data      - Pal(c(-4000, -2000, -100)) - return colours for 3 depths
 #' 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
 #' Derived from maps created in Matlab by Emmanuel Laurenceau.
 #' @param x a vector of data values or a single num (n)
@@ -19,24 +19,10 @@
 #' @examples
 #' plot(1:15, pch = 19, cex = 4, col  = bathy_deep_pal(15))
 bathy_deep_pal <- function(x, palette = FALSE, alpha = 1, ...) {
-  breaks <- c(-5500, seq(-5000, -1000, by = 1000), -500,  0)
-  breaks <- seq(-5500, 0, length = 255)
+  breaks <- seq(-5500, 0, length.out = 256)
   cols <- colorRampPalette(rgb(c(0, 18, 60, 103, 141, 194, 255), c(0, 18, 60, 111, 163, 216, 255), c(0, 26, 85, 135, 173, 216, 255), maxColorValue = 255))(256)
 
-  hexalpha <- as.hexmode(round(255 * alpha))
-  if (nchar(hexalpha) == 1L)
-    hexalpha <- paste(rep(hexalpha, 2L), collapse = "")
-  cols <- paste0(cols, hexalpha)
-  if (palette)
-    return(list(breaks = breaks, cols = cols))
-  if (missing(x))
-    return(colorRampPalette(cols))
-  if (length(x) == 1L) {
-    return(paste0(colorRampPalette(cols)(x), hexalpha))
-  }
-  else {
-    return(cols[findInterval(x, breaks)])
-  }
+  abs_pal(x, palette = palette, alpha = alpha, breaks = breaks, cols = cols)
 }
 
 #' @name bathy_deep_pal

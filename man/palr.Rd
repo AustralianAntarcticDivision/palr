@@ -20,6 +20,11 @@ Useful links:
 \author{
 \strong{Maintainer}: Michael D. Sumner \email{mdsumner@gmail.com}
 
+Authors:
+\itemize{
+  \item Michael D. Sumner \email{mdsumner@gmail.com}
+}
+
 Other contributors:
 \itemize{
   \item Abigael Proctor (Named the package) [contributor]

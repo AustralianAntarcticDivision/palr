@@ -1,8 +1,38 @@
-# palr dev
+# palr 0.5.0
 
-* New stretch functions based on experience with Sentinel 2. 
+* Fixed a long-standing bug in `sst_pal()`, `chl_pal()`, `ice_pal()`, and
+ `bathy_deep_pal()`: data values below the first palette break were silently
+ dropped from the output (a zero index from `findInterval()`), shortening the
+ result and misaligning colours. Out of range values now clamp to the end
+ colours and output length always matches input length.
 
-* New function dirty_pal() for global bathymetry. 
+* The absolute palettes now share one internal worker `abs_pal()`, unifying
+ alpha handling and the n-colours/data/palette/function modes. The function
+ mode (`pal()`) now respects `alpha`.
+
+* New function `image_hex()` converts matrices and arrays (1-band palette,
+ grey+alpha, RGB, RGBA, raw, logical, character) to a matrix of hex colours.
+ This is the colour engine shared with the {ximage} package, with robust
+ handling of missing, non-finite, and constant data.
+
+* New stretch functions `stretch_linear()`, `stretch_log()`, `stretch_sqrt()`,
+ and `stretch_histeq()` rescale data to [0, 1] ahead of colour mapping, based
+ on experience with Sentinel-2. They preserve matrix/array dimensions, map
+ constant input to 0.5, return NA for non-finite input, and accept absolute
+ bounds via `lim` for scene-independent stretches.
+
+* New function `dirty_pal()` for global bathymetry/topography (AAD underway,
+ DiRT), with companion `dirty_image()` for `vapour::gdal_raster_data()`
+ output. Follows the standard palr palette modes.
+
+* `d_pal()` and `image_pal()` now map constant data to a mid-palette colour
+ instead of returning NA.
+
+* Tests moved to testthat edition 3, fixed a test that used the magrittr pipe
+ without it being available.
+
+* Removed unused Suggests of viridis, removed large blocks of commented-out
+ legacy code.
 
 # palr 0.4.0
 

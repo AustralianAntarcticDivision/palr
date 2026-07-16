@@ -13,27 +13,38 @@
   pal[nrow(pal):1, ]
 }
 
-dirt_bathy_cols <- function(alpha = 1) {
-  p <- .dirty_pal()
-  list(value = p$value, col = rgb(p$red, p$green, p$blue, alpha, maxColorValue = 255))
+## densify a set of anchor breaks/colours to a fixed resolution, preserving
+## the (irregular) spacing of the anchors, independent of the input data
+#' @importFrom stats approx
+.densify_pal <- function(value, col, n = 256) {
+  list(breaks = approx(seq_along(value), value, n = n)$y,
+       cols = colorRampPalette(col)(n))
 }
 
 #' Bathymetry palette, absolute for global use
 #'
-#' From AAD underway facility. 
-#' 
-#' @param x numeric value
+#' From AAD underway facility (DiRT).
+#'
+#' The palette functions operate in 3 modes:
+#' 1) n colours - Pal(6) - returns 6 colours from the palette
+#' 2) data      - Pal(c(-4000, -2000, 100)) - return colours for 3 elevations
+#' 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
+#'
+#' The palette spans -8000 to 1000 metres, values outside that range clamp to
+#' the end colours.
+#' @param x a vector of data values or a single num (n)
+#' @param palette logical, if \code{TRUE} return a list with matching colours and values
 #' @param alpha 0 to 1 for transparency
 #'
-#' @return vector of hex colours
+#' @return colours, palette, or function, see Details
 #' @export
 #'
 #' @examples
 #' dirty_pal(seq(-8000, 0, length.out = 10))
-dirty_pal <- function(x, alpha = 1) {
-  pal <- dirt_bathy_cols(alpha * 255)
-  #browser()
-  ramp_pal(x, pal$col, breaks = pal$value)
+dirty_pal <- function(x, palette = FALSE, alpha = 1) {
+  p <- .dirty_pal()
+  d <- .densify_pal(p$value, rgb(p$red, p$green, p$blue, maxColorValue = 255))
+  abs_pal(x, palette = palette, alpha = alpha, breaks = d$breaks, cols = d$cols)
 }
 
 #' Convert list of raster output to bathymetry palette

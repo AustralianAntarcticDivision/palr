@@ -28,7 +28,7 @@ Deep bathymetry colours.
 Colour ramp suitable for deep waters (-5500) to sea level.
 The palette functions operate in 3 modes:
 1) n colours - Pal(6) - returns 6 colours from the palette
-2) data      - Pal(c(10, 50, 100)) - return colours for 3 ice concentrations
+2) data      - Pal(c(-4000, -2000, -100)) - return colours for 3 depths
 3) palette   - Pal(palette = TRUE) - return the full palette and breaks
 Derived from maps created in Matlab by Emmanuel Laurenceau.
 }

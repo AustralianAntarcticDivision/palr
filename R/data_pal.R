@@ -40,7 +40,14 @@ d_pal <- function(x, pal = hcl.colors(84)) {
     out[bad] <- NA
     return(out)
   }
-  xx <- (x  - min(x, na.rm = TRUE)) / diff(range(x, na.rm = TRUE))
+  rg <- range(x, na.rm = TRUE)
+  if (!(diff(rg) > 0)) {
+    ## constant data maps to the middle of the palette
+    out <- rep(pal[ceiling(length(pal) / 2)], length(x))
+    out[bad] <- NA_character_
+    return(out)
+  }
+  xx <- (x - rg[1L]) / diff(rg)
   pal[xx * (length(pal) - 1) + 1]
 }
 

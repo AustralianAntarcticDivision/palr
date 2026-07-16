@@ -49,6 +49,7 @@ image_pal <- function(x, col, ..., breaks = NULL, n = NULL, zlim = NULL) {
     outcols <- col[cut(x, breaks)]
   } else {
     if (is.null(zlim)) zlim <- range(x, na.rm = TRUE)
+    if (!(diff(zlim) > 0)) zlim <- zlim + c(-0.5, 0.5)  ## constant data
     ## --- logic taken from graphics::image.default 2019-11-07
     z <- (x - zlim[1L])/diff(zlim)
     nc <- length(col)
