@@ -16,3 +16,4 @@
 ^\.positai$
 ^\.claude$
 ^_pkgdown.yml
+^CRAN-SUBMISSION$
