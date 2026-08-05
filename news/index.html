@@ -38,7 +38,7 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.5.0" id="palr-050">palr 0.5.0<a class="anchor" aria-label="anchor" href="#palr-050"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.5.0" id="palr-050">palr 0.5.0<a class="anchor" aria-label="anchor" href="#palr-050"></a></h2><p class="text-muted">CRAN release: 2026-08-05</p>
 <ul><li><p>Fixed a long-standing bug in <code><a href="../reference/sst_pal.html">sst_pal()</a></code>, <code><a href="../reference/chl_pal.html">chl_pal()</a></code>, <code><a href="../reference/ice_pal.html">ice_pal()</a></code>, and <code><a href="../reference/bathy_deep_pal.html">bathy_deep_pal()</a></code>: data values below the first palette break were silently dropped from the output (a zero index from <code><a href="https://rdrr.io/r/base/findInterval.html" class="external-link">findInterval()</a></code>), shortening the result and misaligning colours. Out of range values now clamp to the end colours and output length always matches input length.</p></li>
 <li><p>The absolute palettes now share one internal worker <code>abs_pal()</code>, unifying alpha handling and the n-colours/data/palette/function modes. The function mode (<code>pal()</code>) now respects <code>alpha</code>.</p></li>
 <li><p>New function <code><a href="../reference/image_hex.html">image_hex()</a></code> converts matrices and arrays (1-band palette, grey+alpha, RGB, RGBA, raw, logical, character) to a matrix of hex colours. This is the colour engine shared with the {ximage} package, with robust handling of missing, non-finite, and constant data.</p></li>

@@ -2,6 +2,8 @@
 
 ## palr 0.5.0
 
+CRAN release: 2026-08-05
+
 - Fixed a long-standing bug in
   [`sst_pal()`](https://australianantarcticdivision.github.io/palr/reference/sst_pal.md),
   [`chl_pal()`](https://australianantarcticdivision.github.io/palr/reference/chl_pal.md),
