@@ -53,6 +53,9 @@
 - Removed unused Suggests of viridis, removed large blocks of
   commented-out legacy code.
 
+- Fixed deprecated usage of
+  [`structure()`](https://rdrr.io/r/base/structure.html) thanks to CRAN.
+
 ## palr 0.4.0
 
 CRAN release: 2023-11-06
