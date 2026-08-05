@@ -1,12 +1,7 @@
-## palr 0.4.0
+## palr 0.5.0
 
-Fixed namespace documentation thanks to CRAN. 
+Fixed deprecated structure() usage and several new features.  
 
-## Test environments
-
-* local ubuntu install
-* win-builder (devel)
-* mac-builder
 
 ## R CMD check results
 
@@ -14,9 +9,7 @@ Fixed namespace documentation thanks to CRAN.
 
 ## Reverse dependencies
 
-The  reverse dependencies pass check with this version. 
+The  reverse dependencies pass check or have no change-to-worse with this version. 
 
 
-* quadmesh
-* paletteer
 

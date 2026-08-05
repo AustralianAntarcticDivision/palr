@@ -33,6 +33,8 @@
 * Removed unused Suggests of viridis, removed large blocks of commented-out
  legacy code.
 
+* Fixed deprecated usage of `structure()` thanks to CRAN. 
+
 # palr 0.4.0
 
 * `ice_pal()` now defaults to the more pleasing NSIDC blue palette (use `amsre = TRUE` to get the old behavour).

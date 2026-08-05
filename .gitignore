@@ -9,3 +9,5 @@
 .Rproj.user
 inst/doc
 .positai
+revdep
+docs
