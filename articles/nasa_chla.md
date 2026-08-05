@@ -42,4 +42,4 @@ par(op)
 
 Compare these plots with the official NASA legend here.
 
-<https://oceancolor.gsfc.nasa.gov/l3/>
+<https://www.earthdata.nasa.gov/centers/ob-daac>
